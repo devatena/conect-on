@@ -1,0 +1,70 @@
+{
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot": {
+    "file": "assets/materialdesignicons-webfont-CSr8KVlo.eot",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot"
+  },
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf": {
+    "file": "assets/materialdesignicons-webfont-B7mPwVP_.ttf",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf"
+  },
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff": {
+    "file": "assets/materialdesignicons-webfont-PXm3-2wK.woff",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff"
+  },
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2": {
+    "file": "assets/materialdesignicons-webfont-Dp5v-WZN.woff2",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
+  },
+  "resources/js/Pages/Colaborador/Acompanhamento.vue": {
+    "file": "assets/Acompanhamento-K2jYlG8j.js",
+    "src": "resources/js/Pages/Colaborador/Acompanhamento.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Acompanhamento-DDQGc1XE.css"
+    ]
+  },
+  "resources/js/Pages/Colaborador/Painel.vue": {
+    "file": "assets/Painel-C77ExhDT.js",
+    "src": "resources/js/Pages/Colaborador/Painel.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Painel-Cvb9ZUg9.css"
+    ]
+  },
+  "resources/js/Pages/Index.vue": {
+    "file": "assets/Index-D-EFpcuu.js",
+    "src": "resources/js/Pages/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Index-Cs28T89g.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DfN1wXhR.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Colaborador/Acompanhamento.vue",
+      "resources/js/Pages/Colaborador/Painel.vue",
+      "resources/js/Pages/Index.vue"
+    ],
+    "css": [
+      "assets/app-BQu_F9e_.css"
+    ],
+    "assets": [
+      "assets/materialdesignicons-webfont-CSr8KVlo.eot",
+      "assets/materialdesignicons-webfont-Dp5v-WZN.woff2",
+      "assets/materialdesignicons-webfont-PXm3-2wK.woff",
+      "assets/materialdesignicons-webfont-B7mPwVP_.ttf"
+    ]
+  }
+}

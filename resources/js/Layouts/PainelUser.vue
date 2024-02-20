@@ -41,11 +41,13 @@ const mobile = ref(false);
                         prepend-icon="mdi-home"
                         title="Início"
                         value="home"
+                        href="/painel"
                     ></v-list-item>
                     <v-list-item
                         prepend-icon="mdi-clock"
                         title="Acompanhamento"
                         value="account"
+                        href="/acompanhamento"
                     ></v-list-item>
                     <v-list-item
                         prepend-icon="mdi-calendar"

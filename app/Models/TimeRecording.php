@@ -15,4 +15,9 @@ class TimeRecording extends Model
         'date',
         'hour_complete'
      ];
+
+     protected $casts = [
+        'date' => 'datetime:d/m/Y',
+        'created_at' => 'datetime:d/m/Y',
+    ];
 }

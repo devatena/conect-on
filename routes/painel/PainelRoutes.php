@@ -1,8 +1,15 @@
 <?php
 
+use App\Http\Controllers\Acompanhamento\AcompanhamentoController;
+use App\Http\Controllers\Painel\PainelController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Recordings\HourController;
 
 Route::middleware('auth')->prefix('painel')->group( function () {
-    Route::get('/',  [HourController::class, 'showRedording'])->name('painel');
+    Route::get('/',  [PainelController::class, 'showRedording'])->name('painel');
 });
+
+
+Route::middleware('auth')->prefix('acompanhamento')->group( function () {
+    Route::get('/',  [AcompanhamentoController::class, 'index'])->name('acompanhamento');
+});
+

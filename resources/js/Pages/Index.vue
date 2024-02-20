@@ -14,7 +14,7 @@ function login() {
 
 <template>
     <Head title="Login" />
-    <div class="d-flex align-center flex-column login">
+    <div class="d-flex align-center flex-column login pr-4 pl-4" >
         <div class="logo">
             <v-img :width="100" src="/img/logo.png" class="mb-4"></v-img>
         </div>

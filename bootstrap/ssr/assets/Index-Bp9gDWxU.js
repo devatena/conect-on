@@ -22,7 +22,7 @@ const _sfc_main = {
       const _component_v_btn = resolveComponent("v-btn");
       _push(`<!--[-->`);
       _push(ssrRenderComponent(unref(Head), { title: "Login" }, null, _parent));
-      _push(`<div class="d-flex align-center flex-column login pr-4 pl-4" data-v-3365e308><div class="logo" data-v-3365e308>`);
+      _push(`<div class="d-flex align-center flex-column login mr-4 mr-4" data-v-60c3da10><div class="logo" data-v-60c3da10>`);
       _push(ssrRenderComponent(_component_v_img, {
         width: 100,
         src: "/img/logo.png",
@@ -178,7 +178,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const Index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-3365e308"]]);
+const Index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-60c3da10"]]);
 export {
   Index as default
 };

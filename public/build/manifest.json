@@ -16,7 +16,7 @@
     "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
   "resources/js/Pages/Colaborador/Acompanhamento.vue": {
-    "file": "assets/Acompanhamento-DU77I7H5.js",
+    "file": "assets/Acompanhamento-CYUXz7eo.js",
     "src": "resources/js/Pages/Colaborador/Acompanhamento.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -27,7 +27,7 @@
     ]
   },
   "resources/js/Pages/Colaborador/Painel.vue": {
-    "file": "assets/Painel-ChOPlu_w.js",
+    "file": "assets/Painel-ar4gsN4l.js",
     "src": "resources/js/Pages/Colaborador/Painel.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -38,18 +38,18 @@
     ]
   },
   "resources/js/Pages/Index.vue": {
-    "file": "assets/Index-a0Bca0gs.js",
+    "file": "assets/Index-Bu-ti3kW.js",
     "src": "resources/js/Pages/Index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js"
     ],
     "css": [
-      "assets/Index-DfL_tDfH.css"
+      "assets/Index-DnyN5sAF.css"
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-DxFFyBdU.js",
+    "file": "assets/app-DY9Bv4Z9.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -58,7 +58,7 @@
       "resources/js/Pages/Index.vue"
     ],
     "css": [
-      "assets/app-B14SjBrx.css"
+      "assets/app-B1M1RGfZ.css"
     ],
     "assets": [
       "assets/materialdesignicons-webfont-CSr8KVlo.eot",

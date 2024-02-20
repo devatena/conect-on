@@ -52,12 +52,12 @@
     "/build/assets/Painel-BCFOiHOJ.css"
   ],
   "resources/js/Pages/Index.vue": [
-    "/build/assets/Index-CC4EHn1O.js",
-    "/build/assets/Index-DHfHAvYV.css"
+    "/build/assets/Index-Bp9gDWxU.js",
+    "/build/assets/Index-DXiNzYio.css"
   ],
-  "resources/js/Pages/Index.vue?vue&type=style&index=0&scoped=3365e308&lang.css": [
-    "/build/assets/Index-CC4EHn1O.js",
-    "/build/assets/Index-DHfHAvYV.css"
+  "resources/js/Pages/Index.vue?vue&type=style&index=0&scoped=60c3da10&lang.css": [
+    "/build/assets/Index-Bp9gDWxU.js",
+    "/build/assets/Index-DXiNzYio.css"
   ],
   "resources/js/ssr.js": [],
   "vendor/tightenco/ziggy/dist/vue.m.js": []

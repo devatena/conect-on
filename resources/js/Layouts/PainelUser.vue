@@ -1,10 +1,14 @@
 <script setup>
-import { Head, Link , router} from "@inertiajs/vue3";
-import { ref } from "vue";
+import {usePage} from "@inertiajs/vue3";
+import {ref, computed } from "vue";
 
 const drawer = ref(true);
-const rail = ref(true);
+const rail = ref(false);
 const mobile = ref(false);
+
+const page = usePage()
+
+const user = computed(() => page.props.auth.user)
 
 
 
@@ -22,7 +26,7 @@ const mobile = ref(false);
             >
                 <v-list-item
                     prepend-avatar="https://randomuser.me/api/portraits/lego/5.jpg"
-                    title="Usuário"
+                    :title="user.name"
                     nav
                 >
                     <template v-slot:append>

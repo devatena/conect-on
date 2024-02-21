@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TimeRecording;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Session;
 
@@ -21,6 +22,7 @@ class HourController extends Controller
         $validInput = $recordToDay->first();
         if (count($recordToDay) === 0) {
             $query = TimeRecording::create([
+                'user_id' => Auth::user()->id,
                 'input' => $now->format('H:i'),
                 'date' => $date
             ]);
@@ -31,6 +33,7 @@ class HourController extends Controller
             }
             if ($validInput->output !== null) {
                 $query = TimeRecording::create([
+                    'user_id' => Auth::user()->id,
                     'input' => $now->format('H:i'),
                     'date' => $date
                 ]);

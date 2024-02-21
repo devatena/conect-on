@@ -14,12 +14,12 @@ function login() {
 
 <template>
     <Head title="Login" />
-    <div class="d-flex align-center flex-column login mr-4 mr-4" >
+    <div class="d-flex align-center flex-column login " >
         <div class="logo">
             <v-img :width="100" src="/img/logo.png" class="mb-4"></v-img>
         </div>
 
-        <v-card width="400">
+        <v-card width="300">
             <v-card-text>
                 <v-form>
                     <v-text-field

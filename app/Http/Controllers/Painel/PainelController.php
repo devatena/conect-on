@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\TimeRecording;
 use Carbon\Carbon;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
 class PainelController extends Controller
 {
@@ -16,7 +17,7 @@ class PainelController extends Controller
     {
         $now = Carbon::now();
         $date = $now->format('Y-m-d');
-        $recordToDay = TimeRecording::where('date', $date)->get();
+        $recordToDay = TimeRecording::where('date', $date)->where('user_id', Auth::user()->id)->get();
         $totalHoras = 0;
         $totalMinutos = 0;
         $total = null;

@@ -5,6 +5,18 @@ import CardTitle from "@/Components/User/CardTitle.vue";
 defineProps({
     records: Object,
 });
+
+function formatDate(dataString) {
+    const [ano, mes, dia] = dataString.split("-");
+    const data = new Date(ano, mes - 1, dia);
+    const dataFormatada = `${data.getDate().toString().padStart(2, "0")}/${(
+        data.getMonth() + 1
+    )
+        .toString()
+        .padStart(2, "0")}/${data.getFullYear()}`;
+
+    return dataFormatada;
+}
 </script>
 
 <template>
@@ -35,17 +47,19 @@ defineProps({
                             </v-row>
                         </v-expansion-panel-title>
                     </v-expansion-panel>
-                    <v-expansion-panel elevation="0" v-for="(day, index) in records.hour">
+                    <v-expansion-panel
+                        elevation="0"
+                        v-for="(day, index) in records.hour"
+                    >
                         <v-expansion-panel-title v-slot="{ open }">
                             <v-row no-gutters>
                                 <v-col cols="4" class="d-flex justify-start">
-                                   {{  index }}
+                                    {{ formatDate(index.slice(0, 10)) }}
                                 </v-col>
                                 <v-col cols="4" class="text--secondary">
                                     Tempo trabalhado
                                 </v-col>
                                 <v-col cols="4" class="text--secondary">
-                                    
                                 </v-col>
                             </v-row>
                         </v-expansion-panel-title>
@@ -56,7 +70,7 @@ defineProps({
                                 no-gutters
                             >
                                 <v-col cols="4" class="text-left">
-                                    {{item.date}}
+                                    {{ item.date }}
                                 </v-col>
                                 <v-col cols="4" class="text-left">
                                     {{

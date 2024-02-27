@@ -1,6 +1,6 @@
 <script setup>
 import { Head, router, useForm, usePage } from "@inertiajs/vue3";
-import { ref, computed, onMounted } from "vue";
+import { ref, computed } from "vue";
 const form = useForm({
     cpf: null,
     password: null,

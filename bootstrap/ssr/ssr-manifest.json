@@ -4,12 +4,12 @@
   ],
   "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
   "resources/js/Components/User/CardTitle.vue": [
-    "/build/assets/Acompanhamento-Bt-FnEYS.js",
-    "/build/assets/Acompanhamento-Cm6f0sT4.css"
+    "/build/assets/Acompanhamento-D6rb3g1k.js",
+    "/build/assets/Acompanhamento-DyGJYXuJ.css"
   ],
   "resources/js/Components/User/CardTitle.vue?vue&type=style&index=0&scoped=5689088b&lang.css": [
-    "/build/assets/Acompanhamento-Bt-FnEYS.js",
-    "/build/assets/Acompanhamento-Cm6f0sT4.css"
+    "/build/assets/Acompanhamento-D6rb3g1k.js",
+    "/build/assets/Acompanhamento-DyGJYXuJ.css"
   ],
   "resources/js/Components/User/CardUser.vue": [
     "/build/assets/Painel-CdMPO-Bi.js",
@@ -36,12 +36,12 @@
     "/build/assets/Painel-DQXiPH-V.css"
   ],
   "resources/js/Pages/Colaborador/Acompanhamento.vue": [
-    "/build/assets/Acompanhamento-Bt-FnEYS.js",
-    "/build/assets/Acompanhamento-Cm6f0sT4.css"
+    "/build/assets/Acompanhamento-D6rb3g1k.js",
+    "/build/assets/Acompanhamento-DyGJYXuJ.css"
   ],
-  "resources/js/Pages/Colaborador/Acompanhamento.vue?vue&type=style&index=0&scoped=22de976a&lang.css": [
-    "/build/assets/Acompanhamento-Bt-FnEYS.js",
-    "/build/assets/Acompanhamento-Cm6f0sT4.css"
+  "resources/js/Pages/Colaborador/Acompanhamento.vue?vue&type=style&index=0&scoped=1f4c43fd&lang.css": [
+    "/build/assets/Acompanhamento-D6rb3g1k.js",
+    "/build/assets/Acompanhamento-DyGJYXuJ.css"
   ],
   "resources/js/Pages/Colaborador/Painel.vue": [
     "/build/assets/Painel-CdMPO-Bi.js",
@@ -52,12 +52,12 @@
     "/build/assets/Painel-DQXiPH-V.css"
   ],
   "resources/js/Pages/Index.vue": [
-    "/build/assets/Index-s469hM3D.js",
-    "/build/assets/Index-C8ZevHdw.css"
+    "/build/assets/Index-D3rFLod3.js",
+    "/build/assets/Index-B8UDAwSQ.css"
   ],
-  "resources/js/Pages/Index.vue?vue&type=style&index=0&scoped=4db992c1&lang.css": [
-    "/build/assets/Index-s469hM3D.js",
-    "/build/assets/Index-C8ZevHdw.css"
+  "resources/js/Pages/Index.vue?vue&type=style&index=0&scoped=430e342b&lang.css": [
+    "/build/assets/Index-D3rFLod3.js",
+    "/build/assets/Index-B8UDAwSQ.css"
   ],
   "resources/js/ssr.js": [],
   "vendor/tightenco/ziggy/dist/vue.m.js": []

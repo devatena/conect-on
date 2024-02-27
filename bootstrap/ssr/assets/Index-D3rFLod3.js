@@ -13,9 +13,11 @@ const _sfc_main = {
     const page = usePage();
     const errors = computed(() => page.props.errors);
     const loading = ref(false);
+    const showPassword = ref(false);
     function login() {
       loading.value = true;
       router.post("/", form, {
+        replace: true,
         onFinish: (visit) => {
           loading.value = false;
         }
@@ -31,7 +33,7 @@ const _sfc_main = {
       const _component_v_btn = resolveComponent("v-btn");
       _push(`<!--[-->`);
       _push(ssrRenderComponent(unref(Head), { title: "Login" }, null, _parent));
-      _push(`<div class="d-flex align-center flex-column login" data-v-4db992c1><div class="logo" data-v-4db992c1>`);
+      _push(`<div class="d-flex align-center flex-column login" data-v-430e342b><div class="logo" data-v-430e342b>`);
       _push(ssrRenderComponent(_component_v_img, {
         width: 100,
         src: "/img/logo.png",
@@ -86,10 +88,12 @@ const _sfc_main = {
                           "onUpdate:modelValue": ($event) => unref(form).cpf = $event
                         }, null, _parent4, _scopeId3));
                         _push4(ssrRenderComponent(_component_v_text_field, {
+                          "append-inner-icon": showPassword.value ? "mdi-eye" : "mdi-eye-off",
                           label: "Senha",
-                          type: "password",
+                          type: showPassword.value ? "text" : "password",
                           modelValue: unref(form).password,
-                          "onUpdate:modelValue": ($event) => unref(form).password = $event
+                          "onUpdate:modelValue": ($event) => unref(form).password = $event,
+                          "onClick:appendInner": ($event) => showPassword.value = !showPassword.value
                         }, null, _parent4, _scopeId3));
                         _push4(ssrRenderComponent(_component_v_btn, {
                           loading: loading.value,
@@ -117,11 +121,13 @@ const _sfc_main = {
                             "onUpdate:modelValue": ($event) => unref(form).cpf = $event
                           }, null, 8, ["modelValue", "onUpdate:modelValue"]),
                           createVNode(_component_v_text_field, {
+                            "append-inner-icon": showPassword.value ? "mdi-eye" : "mdi-eye-off",
                             label: "Senha",
-                            type: "password",
+                            type: showPassword.value ? "text" : "password",
                             modelValue: unref(form).password,
-                            "onUpdate:modelValue": ($event) => unref(form).password = $event
-                          }, null, 8, ["modelValue", "onUpdate:modelValue"]),
+                            "onUpdate:modelValue": ($event) => unref(form).password = $event,
+                            "onClick:appendInner": ($event) => showPassword.value = !showPassword.value
+                          }, null, 8, ["append-inner-icon", "type", "modelValue", "onUpdate:modelValue", "onClick:appendInner"]),
                           createVNode(_component_v_btn, {
                             loading: loading.value,
                             block: "",
@@ -169,11 +175,13 @@ const _sfc_main = {
                           "onUpdate:modelValue": ($event) => unref(form).cpf = $event
                         }, null, 8, ["modelValue", "onUpdate:modelValue"]),
                         createVNode(_component_v_text_field, {
+                          "append-inner-icon": showPassword.value ? "mdi-eye" : "mdi-eye-off",
                           label: "Senha",
-                          type: "password",
+                          type: showPassword.value ? "text" : "password",
                           modelValue: unref(form).password,
-                          "onUpdate:modelValue": ($event) => unref(form).password = $event
-                        }, null, 8, ["modelValue", "onUpdate:modelValue"]),
+                          "onUpdate:modelValue": ($event) => unref(form).password = $event,
+                          "onClick:appendInner": ($event) => showPassword.value = !showPassword.value
+                        }, null, 8, ["append-inner-icon", "type", "modelValue", "onUpdate:modelValue", "onClick:appendInner"]),
                         createVNode(_component_v_btn, {
                           loading: loading.value,
                           block: "",
@@ -226,11 +234,13 @@ const _sfc_main = {
                         "onUpdate:modelValue": ($event) => unref(form).cpf = $event
                       }, null, 8, ["modelValue", "onUpdate:modelValue"]),
                       createVNode(_component_v_text_field, {
+                        "append-inner-icon": showPassword.value ? "mdi-eye" : "mdi-eye-off",
                         label: "Senha",
-                        type: "password",
+                        type: showPassword.value ? "text" : "password",
                         modelValue: unref(form).password,
-                        "onUpdate:modelValue": ($event) => unref(form).password = $event
-                      }, null, 8, ["modelValue", "onUpdate:modelValue"]),
+                        "onUpdate:modelValue": ($event) => unref(form).password = $event,
+                        "onClick:appendInner": ($event) => showPassword.value = !showPassword.value
+                      }, null, 8, ["append-inner-icon", "type", "modelValue", "onUpdate:modelValue", "onClick:appendInner"]),
                       createVNode(_component_v_btn, {
                         loading: loading.value,
                         block: "",
@@ -263,7 +273,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const Index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-4db992c1"]]);
+const Index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-430e342b"]]);
 export {
   Index as default
 };

@@ -57,6 +57,7 @@ const _sfc_main = {
       const _component_v_col = resolveComponent("v-col");
       const _component_v_icon = resolveComponent("v-icon");
       const _component_v_expansion_panel_text = resolveComponent("v-expansion-panel-text");
+      const _component_v_btn = resolveComponent("v-btn");
       _push(`<!--[-->`);
       _push(ssrRenderComponent(unref(Head), { title: "Acompanhamento" }, null, _parent));
       _push(ssrRenderComponent(_component_painel_user, null, {
@@ -83,12 +84,11 @@ const _sfc_main = {
                             if (_push5) {
                               _push5(ssrRenderComponent(_component_v_expansion_panel, {
                                 elevation: "0",
-                                style: { "background-color": "blueviolet", "color": "white" },
-                                readonly: "true"
+                                style: { "background-color": "blueviolet", "color": "white" }
                               }, {
                                 default: withCtx((_5, _push6, _parent6, _scopeId5) => {
                                   if (_push6) {
-                                    _push6(ssrRenderComponent(_component_v_expansion_panel_title, { "hide-actions": "false" }, {
+                                    _push6(ssrRenderComponent(_component_v_expansion_panel_title, { "hide-actions": true }, {
                                       default: withCtx((_6, _push7, _parent7, _scopeId6) => {
                                         if (_push7) {
                                           _push7(ssrRenderComponent(_component_v_row, { "no-gutters": "" }, {
@@ -214,7 +214,7 @@ const _sfc_main = {
                                     }, _parent6, _scopeId5));
                                   } else {
                                     return [
-                                      createVNode(_component_v_expansion_panel_title, { "hide-actions": "false" }, {
+                                      createVNode(_component_v_expansion_panel_title, { "hide-actions": true }, {
                                         default: withCtx(() => [
                                           createVNode(_component_v_row, { "no-gutters": "" }, {
                                             default: withCtx(() => [
@@ -262,16 +262,16 @@ const _sfc_main = {
                                   default: withCtx((_5, _push6, _parent6, _scopeId5) => {
                                     if (_push6) {
                                       _push6(ssrRenderComponent(_component_v_expansion_panel_title, null, {
-                                        default: withCtx(({ open }, _push7, _parent7, _scopeId6) => {
+                                        default: withCtx((_6, _push7, _parent7, _scopeId6) => {
                                           if (_push7) {
                                             _push7(ssrRenderComponent(_component_v_row, { "no-gutters": "" }, {
-                                              default: withCtx((_6, _push8, _parent8, _scopeId7) => {
+                                              default: withCtx((_7, _push8, _parent8, _scopeId7) => {
                                                 if (_push8) {
                                                   _push8(ssrRenderComponent(_component_v_col, {
                                                     cols: "4",
                                                     class: "d-flex justify-start"
                                                   }, {
-                                                    default: withCtx((_7, _push9, _parent9, _scopeId8) => {
+                                                    default: withCtx((_8, _push9, _parent9, _scopeId8) => {
                                                       if (_push9) {
                                                         _push9(`${ssrInterpolate(formatDate(index.slice(0, 10)))}`);
                                                       } else {
@@ -286,7 +286,7 @@ const _sfc_main = {
                                                     cols: "4",
                                                     class: "text--secondary"
                                                   }, {
-                                                    default: withCtx((_7, _push9, _parent9, _scopeId8) => {
+                                                    default: withCtx((_8, _push9, _parent9, _scopeId8) => {
                                                       if (_push9) {
                                                         _push9(`${ssrInterpolate(__props.records.totalHour[index])}`);
                                                       } else {
@@ -301,7 +301,7 @@ const _sfc_main = {
                                                     cols: "4",
                                                     class: "text--secondary"
                                                   }, {
-                                                    default: withCtx((_7, _push9, _parent9, _scopeId8) => {
+                                                    default: withCtx((_8, _push9, _parent9, _scopeId8) => {
                                                       if (_push9) {
                                                         if (!__props.records.errors[index]) {
                                                           _push9(ssrRenderComponent(_component_v_icon, { icon: "mdi-check-all" }, null, _parent9, _scopeId8));
@@ -426,7 +426,22 @@ const _sfc_main = {
                                               default: withCtx((_7, _push8, _parent8, _scopeId7) => {
                                                 if (_push8) {
                                                   _push8(ssrRenderComponent(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
+                                                    class: "text-left"
+                                                  }, {
+                                                    default: withCtx((_8, _push9, _parent9, _scopeId8) => {
+                                                      if (_push9) {
+                                                        _push9(` # `);
+                                                      } else {
+                                                        return [
+                                                          createTextVNode(" # ")
+                                                        ];
+                                                      }
+                                                    }),
+                                                    _: 2
+                                                  }, _parent8, _scopeId7));
+                                                  _push8(ssrRenderComponent(_component_v_col, {
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx((_8, _push9, _parent9, _scopeId8) => {
@@ -441,7 +456,7 @@ const _sfc_main = {
                                                     _: 2
                                                   }, _parent8, _scopeId7));
                                                   _push8(ssrRenderComponent(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx((_8, _push9, _parent9, _scopeId8) => {
@@ -456,7 +471,7 @@ const _sfc_main = {
                                                     _: 2
                                                   }, _parent8, _scopeId7));
                                                   _push8(ssrRenderComponent(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx((_8, _push9, _parent9, _scopeId8) => {
@@ -471,7 +486,22 @@ const _sfc_main = {
                                                     _: 2
                                                   }, _parent8, _scopeId7));
                                                   _push8(ssrRenderComponent(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
+                                                    class: "text-left"
+                                                  }, {
+                                                    default: withCtx((_8, _push9, _parent9, _scopeId8) => {
+                                                      if (_push9) {
+                                                        _push9(` Intervalo `);
+                                                      } else {
+                                                        return [
+                                                          createTextVNode(" Intervalo ")
+                                                        ];
+                                                      }
+                                                    }),
+                                                    _: 2
+                                                  }, _parent8, _scopeId7));
+                                                  _push8(ssrRenderComponent(_component_v_col, {
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx((_8, _push9, _parent9, _scopeId8) => {
@@ -488,7 +518,16 @@ const _sfc_main = {
                                                 } else {
                                                   return [
                                                     createVNode(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
+                                                      class: "text-left"
+                                                    }, {
+                                                      default: withCtx(() => [
+                                                        createTextVNode(" # ")
+                                                      ]),
+                                                      _: 1
+                                                    }),
+                                                    createVNode(_component_v_col, {
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
@@ -497,7 +536,7 @@ const _sfc_main = {
                                                       _: 1
                                                     }),
                                                     createVNode(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
@@ -506,7 +545,7 @@ const _sfc_main = {
                                                       _: 1
                                                     }),
                                                     createVNode(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
@@ -515,7 +554,16 @@ const _sfc_main = {
                                                       _: 1
                                                     }),
                                                     createVNode(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
+                                                      class: "text-left"
+                                                    }, {
+                                                      default: withCtx(() => [
+                                                        createTextVNode(" Intervalo ")
+                                                      ]),
+                                                      _: 1
+                                                    }),
+                                                    createVNode(_component_v_col, {
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
@@ -529,15 +577,30 @@ const _sfc_main = {
                                               _: 2
                                             }, _parent7, _scopeId6));
                                             _push7(`<!--[-->`);
-                                            ssrRenderList(__props.records.hour[index], (item, index2) => {
+                                            ssrRenderList(__props.records.hour[index], (item, count) => {
                                               _push7(ssrRenderComponent(_component_v_row, {
-                                                key: index2,
+                                                key: index,
                                                 "no-gutters": ""
                                               }, {
                                                 default: withCtx((_7, _push8, _parent8, _scopeId7) => {
                                                   if (_push8) {
                                                     _push8(ssrRenderComponent(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
+                                                      class: "text-left"
+                                                    }, {
+                                                      default: withCtx((_8, _push9, _parent9, _scopeId8) => {
+                                                        if (_push9) {
+                                                          _push9(`${ssrInterpolate(count + 1)}`);
+                                                        } else {
+                                                          return [
+                                                            createTextVNode(toDisplayString(count + 1), 1)
+                                                          ];
+                                                        }
+                                                      }),
+                                                      _: 2
+                                                    }, _parent8, _scopeId7));
+                                                    _push8(ssrRenderComponent(_component_v_col, {
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx((_8, _push9, _parent9, _scopeId8) => {
@@ -552,7 +615,7 @@ const _sfc_main = {
                                                       _: 2
                                                     }, _parent8, _scopeId7));
                                                     _push8(ssrRenderComponent(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx((_8, _push9, _parent9, _scopeId8) => {
@@ -576,7 +639,7 @@ const _sfc_main = {
                                                       _: 2
                                                     }, _parent8, _scopeId7));
                                                     _push8(ssrRenderComponent(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx((_8, _push9, _parent9, _scopeId8) => {
@@ -600,15 +663,58 @@ const _sfc_main = {
                                                       _: 2
                                                     }, _parent8, _scopeId7));
                                                     _push8(ssrRenderComponent(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx((_8, _push9, _parent9, _scopeId8) => {
                                                         if (_push9) {
-                                                          _push9(` Ações `);
+                                                          _push9(` 00:00 `);
                                                         } else {
                                                           return [
-                                                            createTextVNode(" Ações ")
+                                                            createTextVNode(" 00:00 ")
+                                                          ];
+                                                        }
+                                                      }),
+                                                      _: 2
+                                                    }, _parent8, _scopeId7));
+                                                    _push8(ssrRenderComponent(_component_v_col, {
+                                                      cols: "2",
+                                                      class: "text-left"
+                                                    }, {
+                                                      default: withCtx((_8, _push9, _parent9, _scopeId8) => {
+                                                        if (_push9) {
+                                                          _push9(ssrRenderComponent(_component_v_btn, {
+                                                            "prepend-icon": "mdi-pencil",
+                                                            variant: "outlined",
+                                                            size: "x-small",
+                                                            color: "orange",
+                                                            class: "mb-1"
+                                                          }, {
+                                                            default: withCtx((_9, _push10, _parent10, _scopeId9) => {
+                                                              if (_push10) {
+                                                                _push10(` Ajuste `);
+                                                              } else {
+                                                                return [
+                                                                  createTextVNode(" Ajuste ")
+                                                                ];
+                                                              }
+                                                            }),
+                                                            _: 2
+                                                          }, _parent9, _scopeId8));
+                                                        } else {
+                                                          return [
+                                                            createVNode(_component_v_btn, {
+                                                              "prepend-icon": "mdi-pencil",
+                                                              variant: "outlined",
+                                                              size: "x-small",
+                                                              color: "orange",
+                                                              class: "mb-1"
+                                                            }, {
+                                                              default: withCtx(() => [
+                                                                createTextVNode(" Ajuste ")
+                                                              ]),
+                                                              _: 1
+                                                            })
                                                           ];
                                                         }
                                                       }),
@@ -617,7 +723,16 @@ const _sfc_main = {
                                                   } else {
                                                     return [
                                                       createVNode(_component_v_col, {
-                                                        cols: "3",
+                                                        cols: "2",
+                                                        class: "text-left"
+                                                      }, {
+                                                        default: withCtx(() => [
+                                                          createTextVNode(toDisplayString(count + 1), 1)
+                                                        ]),
+                                                        _: 2
+                                                      }, 1024),
+                                                      createVNode(_component_v_col, {
+                                                        cols: "2",
                                                         class: "text-left"
                                                       }, {
                                                         default: withCtx(() => [
@@ -626,7 +741,7 @@ const _sfc_main = {
                                                         _: 2
                                                       }, 1024),
                                                       createVNode(_component_v_col, {
-                                                        cols: "3",
+                                                        cols: "2",
                                                         class: "text-left"
                                                       }, {
                                                         default: withCtx(() => [
@@ -639,7 +754,7 @@ const _sfc_main = {
                                                         _: 2
                                                       }, 1024),
                                                       createVNode(_component_v_col, {
-                                                        cols: "3",
+                                                        cols: "2",
                                                         class: "text-left"
                                                       }, {
                                                         default: withCtx(() => [
@@ -652,11 +767,31 @@ const _sfc_main = {
                                                         _: 2
                                                       }, 1024),
                                                       createVNode(_component_v_col, {
-                                                        cols: "3",
+                                                        cols: "2",
                                                         class: "text-left"
                                                       }, {
                                                         default: withCtx(() => [
-                                                          createTextVNode(" Ações ")
+                                                          createTextVNode(" 00:00 ")
+                                                        ]),
+                                                        _: 1
+                                                      }),
+                                                      createVNode(_component_v_col, {
+                                                        cols: "2",
+                                                        class: "text-left"
+                                                      }, {
+                                                        default: withCtx(() => [
+                                                          createVNode(_component_v_btn, {
+                                                            "prepend-icon": "mdi-pencil",
+                                                            variant: "outlined",
+                                                            size: "x-small",
+                                                            color: "orange",
+                                                            class: "mb-1"
+                                                          }, {
+                                                            default: withCtx(() => [
+                                                              createTextVNode(" Ajuste ")
+                                                            ]),
+                                                            _: 1
+                                                          })
                                                         ]),
                                                         _: 1
                                                       })
@@ -676,7 +811,16 @@ const _sfc_main = {
                                               }, {
                                                 default: withCtx(() => [
                                                   createVNode(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
+                                                    class: "text-left"
+                                                  }, {
+                                                    default: withCtx(() => [
+                                                      createTextVNode(" # ")
+                                                    ]),
+                                                    _: 1
+                                                  }),
+                                                  createVNode(_component_v_col, {
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
@@ -685,7 +829,7 @@ const _sfc_main = {
                                                     _: 1
                                                   }),
                                                   createVNode(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
@@ -694,7 +838,7 @@ const _sfc_main = {
                                                     _: 1
                                                   }),
                                                   createVNode(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
@@ -703,7 +847,16 @@ const _sfc_main = {
                                                     _: 1
                                                   }),
                                                   createVNode(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
+                                                    class: "text-left"
+                                                  }, {
+                                                    default: withCtx(() => [
+                                                      createTextVNode(" Intervalo ")
+                                                    ]),
+                                                    _: 1
+                                                  }),
+                                                  createVNode(_component_v_col, {
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
@@ -714,14 +867,23 @@ const _sfc_main = {
                                                 ]),
                                                 _: 1
                                               }),
-                                              (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, index2) => {
+                                              (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, count) => {
                                                 return openBlock(), createBlock(_component_v_row, {
-                                                  key: index2,
+                                                  key: index,
                                                   "no-gutters": ""
                                                 }, {
                                                   default: withCtx(() => [
                                                     createVNode(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
+                                                      class: "text-left"
+                                                    }, {
+                                                      default: withCtx(() => [
+                                                        createTextVNode(toDisplayString(count + 1), 1)
+                                                      ]),
+                                                      _: 2
+                                                    }, 1024),
+                                                    createVNode(_component_v_col, {
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
@@ -730,7 +892,7 @@ const _sfc_main = {
                                                       _: 2
                                                     }, 1024),
                                                     createVNode(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
@@ -743,7 +905,7 @@ const _sfc_main = {
                                                       _: 2
                                                     }, 1024),
                                                     createVNode(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
@@ -756,11 +918,31 @@ const _sfc_main = {
                                                       _: 2
                                                     }, 1024),
                                                     createVNode(_component_v_col, {
-                                                      cols: "3",
+                                                      cols: "2",
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
-                                                        createTextVNode(" Ações ")
+                                                        createTextVNode(" 00:00 ")
+                                                      ]),
+                                                      _: 1
+                                                    }),
+                                                    createVNode(_component_v_col, {
+                                                      cols: "2",
+                                                      class: "text-left"
+                                                    }, {
+                                                      default: withCtx(() => [
+                                                        createVNode(_component_v_btn, {
+                                                          "prepend-icon": "mdi-pencil",
+                                                          variant: "outlined",
+                                                          size: "x-small",
+                                                          color: "orange",
+                                                          class: "mb-1"
+                                                        }, {
+                                                          default: withCtx(() => [
+                                                            createTextVNode(" Ajuste ")
+                                                          ]),
+                                                          _: 1
+                                                        })
                                                       ]),
                                                       _: 1
                                                     })
@@ -776,7 +958,7 @@ const _sfc_main = {
                                     } else {
                                       return [
                                         createVNode(_component_v_expansion_panel_title, null, {
-                                          default: withCtx(({ open }) => [
+                                          default: withCtx(() => [
                                             createVNode(_component_v_row, { "no-gutters": "" }, {
                                               default: withCtx(() => [
                                                 createVNode(_component_v_col, {
@@ -828,7 +1010,16 @@ const _sfc_main = {
                                             }, {
                                               default: withCtx(() => [
                                                 createVNode(_component_v_col, {
-                                                  cols: "3",
+                                                  cols: "2",
+                                                  class: "text-left"
+                                                }, {
+                                                  default: withCtx(() => [
+                                                    createTextVNode(" # ")
+                                                  ]),
+                                                  _: 1
+                                                }),
+                                                createVNode(_component_v_col, {
+                                                  cols: "2",
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
@@ -837,7 +1028,7 @@ const _sfc_main = {
                                                   _: 1
                                                 }),
                                                 createVNode(_component_v_col, {
-                                                  cols: "3",
+                                                  cols: "2",
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
@@ -846,7 +1037,7 @@ const _sfc_main = {
                                                   _: 1
                                                 }),
                                                 createVNode(_component_v_col, {
-                                                  cols: "3",
+                                                  cols: "2",
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
@@ -855,7 +1046,16 @@ const _sfc_main = {
                                                   _: 1
                                                 }),
                                                 createVNode(_component_v_col, {
-                                                  cols: "3",
+                                                  cols: "2",
+                                                  class: "text-left"
+                                                }, {
+                                                  default: withCtx(() => [
+                                                    createTextVNode(" Intervalo ")
+                                                  ]),
+                                                  _: 1
+                                                }),
+                                                createVNode(_component_v_col, {
+                                                  cols: "2",
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
@@ -866,14 +1066,23 @@ const _sfc_main = {
                                               ]),
                                               _: 1
                                             }),
-                                            (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, index2) => {
+                                            (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, count) => {
                                               return openBlock(), createBlock(_component_v_row, {
-                                                key: index2,
+                                                key: index,
                                                 "no-gutters": ""
                                               }, {
                                                 default: withCtx(() => [
                                                   createVNode(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
+                                                    class: "text-left"
+                                                  }, {
+                                                    default: withCtx(() => [
+                                                      createTextVNode(toDisplayString(count + 1), 1)
+                                                    ]),
+                                                    _: 2
+                                                  }, 1024),
+                                                  createVNode(_component_v_col, {
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
@@ -882,7 +1091,7 @@ const _sfc_main = {
                                                     _: 2
                                                   }, 1024),
                                                   createVNode(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
@@ -895,7 +1104,7 @@ const _sfc_main = {
                                                     _: 2
                                                   }, 1024),
                                                   createVNode(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
@@ -908,11 +1117,31 @@ const _sfc_main = {
                                                     _: 2
                                                   }, 1024),
                                                   createVNode(_component_v_col, {
-                                                    cols: "3",
+                                                    cols: "2",
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
-                                                      createTextVNode(" Ações ")
+                                                      createTextVNode(" 00:00 ")
+                                                    ]),
+                                                    _: 1
+                                                  }),
+                                                  createVNode(_component_v_col, {
+                                                    cols: "2",
+                                                    class: "text-left"
+                                                  }, {
+                                                    default: withCtx(() => [
+                                                      createVNode(_component_v_btn, {
+                                                        "prepend-icon": "mdi-pencil",
+                                                        variant: "outlined",
+                                                        size: "x-small",
+                                                        color: "orange",
+                                                        class: "mb-1"
+                                                      }, {
+                                                        default: withCtx(() => [
+                                                          createTextVNode(" Ajuste ")
+                                                        ]),
+                                                        _: 1
+                                                      })
                                                     ]),
                                                     _: 1
                                                   })
@@ -934,11 +1163,10 @@ const _sfc_main = {
                               return [
                                 createVNode(_component_v_expansion_panel, {
                                   elevation: "0",
-                                  style: { "background-color": "blueviolet", "color": "white" },
-                                  readonly: "true"
+                                  style: { "background-color": "blueviolet", "color": "white" }
                                 }, {
                                   default: withCtx(() => [
-                                    createVNode(_component_v_expansion_panel_title, { "hide-actions": "false" }, {
+                                    createVNode(_component_v_expansion_panel_title, { "hide-actions": true }, {
                                       default: withCtx(() => [
                                         createVNode(_component_v_row, { "no-gutters": "" }, {
                                           default: withCtx(() => [
@@ -982,7 +1210,7 @@ const _sfc_main = {
                                   return openBlock(), createBlock(_component_v_expansion_panel, { elevation: "0" }, {
                                     default: withCtx(() => [
                                       createVNode(_component_v_expansion_panel_title, null, {
-                                        default: withCtx(({ open }) => [
+                                        default: withCtx(() => [
                                           createVNode(_component_v_row, { "no-gutters": "" }, {
                                             default: withCtx(() => [
                                               createVNode(_component_v_col, {
@@ -1034,7 +1262,16 @@ const _sfc_main = {
                                           }, {
                                             default: withCtx(() => [
                                               createVNode(_component_v_col, {
-                                                cols: "3",
+                                                cols: "2",
+                                                class: "text-left"
+                                              }, {
+                                                default: withCtx(() => [
+                                                  createTextVNode(" # ")
+                                                ]),
+                                                _: 1
+                                              }),
+                                              createVNode(_component_v_col, {
+                                                cols: "2",
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
@@ -1043,7 +1280,7 @@ const _sfc_main = {
                                                 _: 1
                                               }),
                                               createVNode(_component_v_col, {
-                                                cols: "3",
+                                                cols: "2",
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
@@ -1052,7 +1289,7 @@ const _sfc_main = {
                                                 _: 1
                                               }),
                                               createVNode(_component_v_col, {
-                                                cols: "3",
+                                                cols: "2",
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
@@ -1061,7 +1298,16 @@ const _sfc_main = {
                                                 _: 1
                                               }),
                                               createVNode(_component_v_col, {
-                                                cols: "3",
+                                                cols: "2",
+                                                class: "text-left"
+                                              }, {
+                                                default: withCtx(() => [
+                                                  createTextVNode(" Intervalo ")
+                                                ]),
+                                                _: 1
+                                              }),
+                                              createVNode(_component_v_col, {
+                                                cols: "2",
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
@@ -1072,14 +1318,23 @@ const _sfc_main = {
                                             ]),
                                             _: 1
                                           }),
-                                          (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, index2) => {
+                                          (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, count) => {
                                             return openBlock(), createBlock(_component_v_row, {
-                                              key: index2,
+                                              key: index,
                                               "no-gutters": ""
                                             }, {
                                               default: withCtx(() => [
                                                 createVNode(_component_v_col, {
-                                                  cols: "3",
+                                                  cols: "2",
+                                                  class: "text-left"
+                                                }, {
+                                                  default: withCtx(() => [
+                                                    createTextVNode(toDisplayString(count + 1), 1)
+                                                  ]),
+                                                  _: 2
+                                                }, 1024),
+                                                createVNode(_component_v_col, {
+                                                  cols: "2",
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
@@ -1088,7 +1343,7 @@ const _sfc_main = {
                                                   _: 2
                                                 }, 1024),
                                                 createVNode(_component_v_col, {
-                                                  cols: "3",
+                                                  cols: "2",
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
@@ -1101,7 +1356,7 @@ const _sfc_main = {
                                                   _: 2
                                                 }, 1024),
                                                 createVNode(_component_v_col, {
-                                                  cols: "3",
+                                                  cols: "2",
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
@@ -1114,11 +1369,31 @@ const _sfc_main = {
                                                   _: 2
                                                 }, 1024),
                                                 createVNode(_component_v_col, {
-                                                  cols: "3",
+                                                  cols: "2",
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
-                                                    createTextVNode(" Ações ")
+                                                    createTextVNode(" 00:00 ")
+                                                  ]),
+                                                  _: 1
+                                                }),
+                                                createVNode(_component_v_col, {
+                                                  cols: "2",
+                                                  class: "text-left"
+                                                }, {
+                                                  default: withCtx(() => [
+                                                    createVNode(_component_v_btn, {
+                                                      "prepend-icon": "mdi-pencil",
+                                                      variant: "outlined",
+                                                      size: "x-small",
+                                                      color: "orange",
+                                                      class: "mb-1"
+                                                    }, {
+                                                      default: withCtx(() => [
+                                                        createTextVNode(" Ajuste ")
+                                                      ]),
+                                                      _: 1
+                                                    })
                                                   ]),
                                                   _: 1
                                                 })
@@ -1144,11 +1419,10 @@ const _sfc_main = {
                             default: withCtx(() => [
                               createVNode(_component_v_expansion_panel, {
                                 elevation: "0",
-                                style: { "background-color": "blueviolet", "color": "white" },
-                                readonly: "true"
+                                style: { "background-color": "blueviolet", "color": "white" }
                               }, {
                                 default: withCtx(() => [
-                                  createVNode(_component_v_expansion_panel_title, { "hide-actions": "false" }, {
+                                  createVNode(_component_v_expansion_panel_title, { "hide-actions": true }, {
                                     default: withCtx(() => [
                                       createVNode(_component_v_row, { "no-gutters": "" }, {
                                         default: withCtx(() => [
@@ -1192,7 +1466,7 @@ const _sfc_main = {
                                 return openBlock(), createBlock(_component_v_expansion_panel, { elevation: "0" }, {
                                   default: withCtx(() => [
                                     createVNode(_component_v_expansion_panel_title, null, {
-                                      default: withCtx(({ open }) => [
+                                      default: withCtx(() => [
                                         createVNode(_component_v_row, { "no-gutters": "" }, {
                                           default: withCtx(() => [
                                             createVNode(_component_v_col, {
@@ -1244,7 +1518,16 @@ const _sfc_main = {
                                         }, {
                                           default: withCtx(() => [
                                             createVNode(_component_v_col, {
-                                              cols: "3",
+                                              cols: "2",
+                                              class: "text-left"
+                                            }, {
+                                              default: withCtx(() => [
+                                                createTextVNode(" # ")
+                                              ]),
+                                              _: 1
+                                            }),
+                                            createVNode(_component_v_col, {
+                                              cols: "2",
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
@@ -1253,7 +1536,7 @@ const _sfc_main = {
                                               _: 1
                                             }),
                                             createVNode(_component_v_col, {
-                                              cols: "3",
+                                              cols: "2",
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
@@ -1262,7 +1545,7 @@ const _sfc_main = {
                                               _: 1
                                             }),
                                             createVNode(_component_v_col, {
-                                              cols: "3",
+                                              cols: "2",
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
@@ -1271,7 +1554,16 @@ const _sfc_main = {
                                               _: 1
                                             }),
                                             createVNode(_component_v_col, {
-                                              cols: "3",
+                                              cols: "2",
+                                              class: "text-left"
+                                            }, {
+                                              default: withCtx(() => [
+                                                createTextVNode(" Intervalo ")
+                                              ]),
+                                              _: 1
+                                            }),
+                                            createVNode(_component_v_col, {
+                                              cols: "2",
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
@@ -1282,14 +1574,23 @@ const _sfc_main = {
                                           ]),
                                           _: 1
                                         }),
-                                        (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, index2) => {
+                                        (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, count) => {
                                           return openBlock(), createBlock(_component_v_row, {
-                                            key: index2,
+                                            key: index,
                                             "no-gutters": ""
                                           }, {
                                             default: withCtx(() => [
                                               createVNode(_component_v_col, {
-                                                cols: "3",
+                                                cols: "2",
+                                                class: "text-left"
+                                              }, {
+                                                default: withCtx(() => [
+                                                  createTextVNode(toDisplayString(count + 1), 1)
+                                                ]),
+                                                _: 2
+                                              }, 1024),
+                                              createVNode(_component_v_col, {
+                                                cols: "2",
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
@@ -1298,7 +1599,7 @@ const _sfc_main = {
                                                 _: 2
                                               }, 1024),
                                               createVNode(_component_v_col, {
-                                                cols: "3",
+                                                cols: "2",
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
@@ -1311,7 +1612,7 @@ const _sfc_main = {
                                                 _: 2
                                               }, 1024),
                                               createVNode(_component_v_col, {
-                                                cols: "3",
+                                                cols: "2",
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
@@ -1324,11 +1625,31 @@ const _sfc_main = {
                                                 _: 2
                                               }, 1024),
                                               createVNode(_component_v_col, {
-                                                cols: "3",
+                                                cols: "2",
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
-                                                  createTextVNode(" Ações ")
+                                                  createTextVNode(" 00:00 ")
+                                                ]),
+                                                _: 1
+                                              }),
+                                              createVNode(_component_v_col, {
+                                                cols: "2",
+                                                class: "text-left"
+                                              }, {
+                                                default: withCtx(() => [
+                                                  createVNode(_component_v_btn, {
+                                                    "prepend-icon": "mdi-pencil",
+                                                    variant: "outlined",
+                                                    size: "x-small",
+                                                    color: "orange",
+                                                    class: "mb-1"
+                                                  }, {
+                                                    default: withCtx(() => [
+                                                      createTextVNode(" Ajuste ")
+                                                    ]),
+                                                    _: 1
+                                                  })
                                                 ]),
                                                 _: 1
                                               })
@@ -1359,11 +1680,10 @@ const _sfc_main = {
                           default: withCtx(() => [
                             createVNode(_component_v_expansion_panel, {
                               elevation: "0",
-                              style: { "background-color": "blueviolet", "color": "white" },
-                              readonly: "true"
+                              style: { "background-color": "blueviolet", "color": "white" }
                             }, {
                               default: withCtx(() => [
-                                createVNode(_component_v_expansion_panel_title, { "hide-actions": "false" }, {
+                                createVNode(_component_v_expansion_panel_title, { "hide-actions": true }, {
                                   default: withCtx(() => [
                                     createVNode(_component_v_row, { "no-gutters": "" }, {
                                       default: withCtx(() => [
@@ -1407,7 +1727,7 @@ const _sfc_main = {
                               return openBlock(), createBlock(_component_v_expansion_panel, { elevation: "0" }, {
                                 default: withCtx(() => [
                                   createVNode(_component_v_expansion_panel_title, null, {
-                                    default: withCtx(({ open }) => [
+                                    default: withCtx(() => [
                                       createVNode(_component_v_row, { "no-gutters": "" }, {
                                         default: withCtx(() => [
                                           createVNode(_component_v_col, {
@@ -1459,7 +1779,16 @@ const _sfc_main = {
                                       }, {
                                         default: withCtx(() => [
                                           createVNode(_component_v_col, {
-                                            cols: "3",
+                                            cols: "2",
+                                            class: "text-left"
+                                          }, {
+                                            default: withCtx(() => [
+                                              createTextVNode(" # ")
+                                            ]),
+                                            _: 1
+                                          }),
+                                          createVNode(_component_v_col, {
+                                            cols: "2",
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
@@ -1468,7 +1797,7 @@ const _sfc_main = {
                                             _: 1
                                           }),
                                           createVNode(_component_v_col, {
-                                            cols: "3",
+                                            cols: "2",
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
@@ -1477,7 +1806,7 @@ const _sfc_main = {
                                             _: 1
                                           }),
                                           createVNode(_component_v_col, {
-                                            cols: "3",
+                                            cols: "2",
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
@@ -1486,7 +1815,16 @@ const _sfc_main = {
                                             _: 1
                                           }),
                                           createVNode(_component_v_col, {
-                                            cols: "3",
+                                            cols: "2",
+                                            class: "text-left"
+                                          }, {
+                                            default: withCtx(() => [
+                                              createTextVNode(" Intervalo ")
+                                            ]),
+                                            _: 1
+                                          }),
+                                          createVNode(_component_v_col, {
+                                            cols: "2",
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
@@ -1497,14 +1835,23 @@ const _sfc_main = {
                                         ]),
                                         _: 1
                                       }),
-                                      (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, index2) => {
+                                      (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, count) => {
                                         return openBlock(), createBlock(_component_v_row, {
-                                          key: index2,
+                                          key: index,
                                           "no-gutters": ""
                                         }, {
                                           default: withCtx(() => [
                                             createVNode(_component_v_col, {
-                                              cols: "3",
+                                              cols: "2",
+                                              class: "text-left"
+                                            }, {
+                                              default: withCtx(() => [
+                                                createTextVNode(toDisplayString(count + 1), 1)
+                                              ]),
+                                              _: 2
+                                            }, 1024),
+                                            createVNode(_component_v_col, {
+                                              cols: "2",
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
@@ -1513,7 +1860,7 @@ const _sfc_main = {
                                               _: 2
                                             }, 1024),
                                             createVNode(_component_v_col, {
-                                              cols: "3",
+                                              cols: "2",
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
@@ -1526,7 +1873,7 @@ const _sfc_main = {
                                               _: 2
                                             }, 1024),
                                             createVNode(_component_v_col, {
-                                              cols: "3",
+                                              cols: "2",
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
@@ -1539,11 +1886,31 @@ const _sfc_main = {
                                               _: 2
                                             }, 1024),
                                             createVNode(_component_v_col, {
-                                              cols: "3",
+                                              cols: "2",
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
-                                                createTextVNode(" Ações ")
+                                                createTextVNode(" 00:00 ")
+                                              ]),
+                                              _: 1
+                                            }),
+                                            createVNode(_component_v_col, {
+                                              cols: "2",
+                                              class: "text-left"
+                                            }, {
+                                              default: withCtx(() => [
+                                                createVNode(_component_v_btn, {
+                                                  "prepend-icon": "mdi-pencil",
+                                                  variant: "outlined",
+                                                  size: "x-small",
+                                                  color: "orange",
+                                                  class: "mb-1"
+                                                }, {
+                                                  default: withCtx(() => [
+                                                    createTextVNode(" Ajuste ")
+                                                  ]),
+                                                  _: 1
+                                                })
                                               ]),
                                               _: 1
                                             })
@@ -1583,11 +1950,10 @@ const _sfc_main = {
                         default: withCtx(() => [
                           createVNode(_component_v_expansion_panel, {
                             elevation: "0",
-                            style: { "background-color": "blueviolet", "color": "white" },
-                            readonly: "true"
+                            style: { "background-color": "blueviolet", "color": "white" }
                           }, {
                             default: withCtx(() => [
-                              createVNode(_component_v_expansion_panel_title, { "hide-actions": "false" }, {
+                              createVNode(_component_v_expansion_panel_title, { "hide-actions": true }, {
                                 default: withCtx(() => [
                                   createVNode(_component_v_row, { "no-gutters": "" }, {
                                     default: withCtx(() => [
@@ -1631,7 +1997,7 @@ const _sfc_main = {
                             return openBlock(), createBlock(_component_v_expansion_panel, { elevation: "0" }, {
                               default: withCtx(() => [
                                 createVNode(_component_v_expansion_panel_title, null, {
-                                  default: withCtx(({ open }) => [
+                                  default: withCtx(() => [
                                     createVNode(_component_v_row, { "no-gutters": "" }, {
                                       default: withCtx(() => [
                                         createVNode(_component_v_col, {
@@ -1683,7 +2049,16 @@ const _sfc_main = {
                                     }, {
                                       default: withCtx(() => [
                                         createVNode(_component_v_col, {
-                                          cols: "3",
+                                          cols: "2",
+                                          class: "text-left"
+                                        }, {
+                                          default: withCtx(() => [
+                                            createTextVNode(" # ")
+                                          ]),
+                                          _: 1
+                                        }),
+                                        createVNode(_component_v_col, {
+                                          cols: "2",
                                           class: "text-left"
                                         }, {
                                           default: withCtx(() => [
@@ -1692,7 +2067,7 @@ const _sfc_main = {
                                           _: 1
                                         }),
                                         createVNode(_component_v_col, {
-                                          cols: "3",
+                                          cols: "2",
                                           class: "text-left"
                                         }, {
                                           default: withCtx(() => [
@@ -1701,7 +2076,7 @@ const _sfc_main = {
                                           _: 1
                                         }),
                                         createVNode(_component_v_col, {
-                                          cols: "3",
+                                          cols: "2",
                                           class: "text-left"
                                         }, {
                                           default: withCtx(() => [
@@ -1710,7 +2085,16 @@ const _sfc_main = {
                                           _: 1
                                         }),
                                         createVNode(_component_v_col, {
-                                          cols: "3",
+                                          cols: "2",
+                                          class: "text-left"
+                                        }, {
+                                          default: withCtx(() => [
+                                            createTextVNode(" Intervalo ")
+                                          ]),
+                                          _: 1
+                                        }),
+                                        createVNode(_component_v_col, {
+                                          cols: "2",
                                           class: "text-left"
                                         }, {
                                           default: withCtx(() => [
@@ -1721,14 +2105,23 @@ const _sfc_main = {
                                       ]),
                                       _: 1
                                     }),
-                                    (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, index2) => {
+                                    (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour[index], (item, count) => {
                                       return openBlock(), createBlock(_component_v_row, {
-                                        key: index2,
+                                        key: index,
                                         "no-gutters": ""
                                       }, {
                                         default: withCtx(() => [
                                           createVNode(_component_v_col, {
-                                            cols: "3",
+                                            cols: "2",
+                                            class: "text-left"
+                                          }, {
+                                            default: withCtx(() => [
+                                              createTextVNode(toDisplayString(count + 1), 1)
+                                            ]),
+                                            _: 2
+                                          }, 1024),
+                                          createVNode(_component_v_col, {
+                                            cols: "2",
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
@@ -1737,7 +2130,7 @@ const _sfc_main = {
                                             _: 2
                                           }, 1024),
                                           createVNode(_component_v_col, {
-                                            cols: "3",
+                                            cols: "2",
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
@@ -1750,7 +2143,7 @@ const _sfc_main = {
                                             _: 2
                                           }, 1024),
                                           createVNode(_component_v_col, {
-                                            cols: "3",
+                                            cols: "2",
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
@@ -1763,11 +2156,31 @@ const _sfc_main = {
                                             _: 2
                                           }, 1024),
                                           createVNode(_component_v_col, {
-                                            cols: "3",
+                                            cols: "2",
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
-                                              createTextVNode(" Ações ")
+                                              createTextVNode(" 00:00 ")
+                                            ]),
+                                            _: 1
+                                          }),
+                                          createVNode(_component_v_col, {
+                                            cols: "2",
+                                            class: "text-left"
+                                          }, {
+                                            default: withCtx(() => [
+                                              createVNode(_component_v_btn, {
+                                                "prepend-icon": "mdi-pencil",
+                                                variant: "outlined",
+                                                size: "x-small",
+                                                color: "orange",
+                                                class: "mb-1"
+                                              }, {
+                                                default: withCtx(() => [
+                                                  createTextVNode(" Ajuste ")
+                                                ]),
+                                                _: 1
+                                              })
                                             ]),
                                             _: 1
                                           })
@@ -1806,7 +2219,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Colaborador/Acompanhamento.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const Acompanhamento = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-22de976a"]]);
+const Acompanhamento = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-1f4c43fd"]]);
 export {
   Acompanhamento as default
 };

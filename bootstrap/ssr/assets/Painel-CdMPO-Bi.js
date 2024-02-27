@@ -279,11 +279,11 @@ const _sfc_main$1 = {
                   _push3(ssrRenderComponent(_component_v_table, null, {
                     default: withCtx((_3, _push4, _parent4, _scopeId3) => {
                       if (_push4) {
-                        _push4(`<thead data-v-72e994ab${_scopeId3}><tr data-v-72e994ab${_scopeId3}><th class="text-left" data-v-72e994ab${_scopeId3}>#</th><th class="text-left" data-v-72e994ab${_scopeId3}>Entrada</th><th class="text-left" data-v-72e994ab${_scopeId3}>Saída</th><th class="text-left" data-v-72e994ab${_scopeId3}>HT</th></tr></thead><tbody data-v-72e994ab${_scopeId3}><!--[-->`);
+                        _push4(`<thead data-v-4e9705cc${_scopeId3}><tr data-v-4e9705cc${_scopeId3}><th class="text-left" data-v-4e9705cc${_scopeId3}>#</th><th class="text-left" data-v-4e9705cc${_scopeId3}>Entrada</th><th class="text-left" data-v-4e9705cc${_scopeId3}>Saída</th><th class="text-left" data-v-4e9705cc${_scopeId3}>HT</th></tr></thead><tbody data-v-4e9705cc${_scopeId3}><!--[-->`);
                         ssrRenderList(__props.recordToDay.horas, (item, index) => {
-                          _push4(`<tr data-v-72e994ab${_scopeId3}><td class="text-left" data-v-72e994ab${_scopeId3}>${ssrInterpolate(index + 1)}</td><td class="text-left" data-v-72e994ab${_scopeId3}>${ssrInterpolate(item.input.slice(0, -3))}</td><td class="text-left" data-v-72e994ab${_scopeId3}>${ssrInterpolate(item.output ? item.output.slice(0, -3) : "-----")}</td><td class="text-left" data-v-72e994ab${_scopeId3}>${ssrInterpolate(item.hour_complete ? item.hour_complete.slice(0, -3) : "----")}</td></tr>`);
+                          _push4(`<tr data-v-4e9705cc${_scopeId3}><td class="text-left" data-v-4e9705cc${_scopeId3}>${ssrInterpolate(index + 1)}</td><td class="text-left" data-v-4e9705cc${_scopeId3}>${ssrInterpolate(item.input)}</td><td class="text-left" data-v-4e9705cc${_scopeId3}>${ssrInterpolate(item.output ? item.output : "-----")}</td><td class="text-left" data-v-4e9705cc${_scopeId3}>${ssrInterpolate(item.hour_complete ? item.hour_complete : "----")}</td></tr>`);
                         });
-                        _push4(`<!--]--><tr data-v-72e994ab${_scopeId3}><td data-v-72e994ab${_scopeId3}></td><td data-v-72e994ab${_scopeId3}></td><th class="text-left" data-v-72e994ab${_scopeId3}> Total de horas:</th><th class="text-left" data-v-72e994ab${_scopeId3}>${ssrInterpolate(__props.recordToDay.totalHoras ? __props.recordToDay.totalHoras : "-----")}</th></tr></tbody>`);
+                        _push4(`<!--]--><tr data-v-4e9705cc${_scopeId3}><td data-v-4e9705cc${_scopeId3}></td><td data-v-4e9705cc${_scopeId3}></td><th class="text-left" data-v-4e9705cc${_scopeId3}> Total de horas:</th><th class="text-left" data-v-4e9705cc${_scopeId3}>${ssrInterpolate(__props.recordToDay.totalHoras ? __props.recordToDay.totalHoras : "-----")}</th></tr></tbody>`);
                       } else {
                         return [
                           createVNode("thead", null, [
@@ -298,9 +298,9 @@ const _sfc_main$1 = {
                             (openBlock(true), createBlock(Fragment, null, renderList(__props.recordToDay.horas, (item, index) => {
                               return openBlock(), createBlock("tr", { key: index }, [
                                 createVNode("td", { class: "text-left" }, toDisplayString(index + 1), 1),
-                                createVNode("td", { class: "text-left" }, toDisplayString(item.input.slice(0, -3)), 1),
-                                createVNode("td", { class: "text-left" }, toDisplayString(item.output ? item.output.slice(0, -3) : "-----"), 1),
-                                createVNode("td", { class: "text-left" }, toDisplayString(item.hour_complete ? item.hour_complete.slice(0, -3) : "----"), 1)
+                                createVNode("td", { class: "text-left" }, toDisplayString(item.input), 1),
+                                createVNode("td", { class: "text-left" }, toDisplayString(item.output ? item.output : "-----"), 1),
+                                createVNode("td", { class: "text-left" }, toDisplayString(item.hour_complete ? item.hour_complete : "----"), 1)
                               ]);
                             }), 128)),
                             createVNode("tr", null, [
@@ -331,9 +331,9 @@ const _sfc_main$1 = {
                           (openBlock(true), createBlock(Fragment, null, renderList(__props.recordToDay.horas, (item, index) => {
                             return openBlock(), createBlock("tr", { key: index }, [
                               createVNode("td", { class: "text-left" }, toDisplayString(index + 1), 1),
-                              createVNode("td", { class: "text-left" }, toDisplayString(item.input.slice(0, -3)), 1),
-                              createVNode("td", { class: "text-left" }, toDisplayString(item.output ? item.output.slice(0, -3) : "-----"), 1),
-                              createVNode("td", { class: "text-left" }, toDisplayString(item.hour_complete ? item.hour_complete.slice(0, -3) : "----"), 1)
+                              createVNode("td", { class: "text-left" }, toDisplayString(item.input), 1),
+                              createVNode("td", { class: "text-left" }, toDisplayString(item.output ? item.output : "-----"), 1),
+                              createVNode("td", { class: "text-left" }, toDisplayString(item.hour_complete ? item.hour_complete : "----"), 1)
                             ]);
                           }), 128)),
                           createVNode("tr", null, [
@@ -369,9 +369,9 @@ const _sfc_main$1 = {
                         (openBlock(true), createBlock(Fragment, null, renderList(__props.recordToDay.horas, (item, index) => {
                           return openBlock(), createBlock("tr", { key: index }, [
                             createVNode("td", { class: "text-left" }, toDisplayString(index + 1), 1),
-                            createVNode("td", { class: "text-left" }, toDisplayString(item.input.slice(0, -3)), 1),
-                            createVNode("td", { class: "text-left" }, toDisplayString(item.output ? item.output.slice(0, -3) : "-----"), 1),
-                            createVNode("td", { class: "text-left" }, toDisplayString(item.hour_complete ? item.hour_complete.slice(0, -3) : "----"), 1)
+                            createVNode("td", { class: "text-left" }, toDisplayString(item.input), 1),
+                            createVNode("td", { class: "text-left" }, toDisplayString(item.output ? item.output : "-----"), 1),
+                            createVNode("td", { class: "text-left" }, toDisplayString(item.hour_complete ? item.hour_complete : "----"), 1)
                           ]);
                         }), 128)),
                         createVNode("tr", null, [
@@ -401,7 +401,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/User/JornadaResumo.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const JornadaResumo = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-72e994ab"]]);
+const JornadaResumo = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-4e9705cc"]]);
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "Painel",
   __ssrInlineRender: true,

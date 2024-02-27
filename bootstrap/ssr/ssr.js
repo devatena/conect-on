@@ -491,7 +491,7 @@ createServer(
     page,
     render: renderToString,
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Colaborador/Acompanhamento.vue": () => import("./assets/Acompanhamento-DmpBxMw2.js"), "./Pages/Colaborador/Painel.vue": () => import("./assets/Painel-BTPe8y8C.js"), "./Pages/Index.vue": () => import("./assets/Index-Bp9gDWxU.js") })),
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Colaborador/Acompanhamento.vue": () => import("./assets/Acompanhamento-Bt-FnEYS.js"), "./Pages/Colaborador/Painel.vue": () => import("./assets/Painel-CdMPO-Bi.js"), "./Pages/Index.vue": () => import("./assets/Index-nj-iBmem.js") })),
     setup({ App, props, plugin }) {
       return createSSRApp({ render: () => h$1(App, props) }).use(plugin).use(P, {
         ...page.props.ziggy,

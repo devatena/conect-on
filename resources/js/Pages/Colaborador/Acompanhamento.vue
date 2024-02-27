@@ -42,7 +42,7 @@ function formatDate(dataString) {
                                     Tempo trabalhado
                                 </v-col>
                                 <v-col cols="4" class="text--secondary">
-                                    Ações
+                                    Status
                                 </v-col>
                             </v-row>
                         </v-expansion-panel-title>
@@ -52,33 +52,57 @@ function formatDate(dataString) {
                         v-for="(day, index) in records.hour"
                     >
                         <v-expansion-panel-title v-slot="{ open }">
-                            <v-row no-gutters>
+                            <v-row no-gutters >
                                 <v-col cols="4" class="d-flex justify-start">
                                     {{ formatDate(index.slice(0, 10)) }}
                                 </v-col>
                                 <v-col cols="4" class="text--secondary">
-                                    Tempo trabalhado
+                                    {{ records.totalHour[index] }}
                                 </v-col>
                                 <v-col cols="4" class="text--secondary">
+                                    <v-icon v-if="!records.errors[index]" icon="mdi-check-all" />
+                                    <v-icon v-if="records.errors[index]" icon="mdi-alert" />
+                                   
                                 </v-col>
                             </v-row>
                         </v-expansion-panel-title>
                         <v-expansion-panel-text>
+                            <v-row no-gutters class="p-2" style="background-color: rgb(213, 213, 213);">
+                                <v-col cols="3" class="text-left">
+                                Entrada    
+                                </v-col>
+                                <v-col cols="3" class="text-left">
+                                Saida    
+                                </v-col>
+
+                                <v-col cols="3" class="text-left">
+                                 Tempo trabalhado
+                                </v-col>
+                                <v-col cols="3" class="text-left">
+                                 Ações
+                                </v-col>
+                            </v-row>
                             <v-row
                                 v-for="(item, index) in records.hour[index]"
                                 :key="index"
                                 no-gutters
                             >
-                                <v-col cols="4" class="text-left">
-                                    {{ item.date }}
+                             <v-col cols="3" class="text-left">
+                                {{item.input}}    
                                 </v-col>
-                                <v-col cols="4" class="text-left">
-                                    {{
-                                        item.hour_complete
-                                            ? item.hour_complete.slice(0, -3)
-                                            : "----"
-                                    }}
+                                <v-col cols="3" class="text-left">
+                                    {{ item.output }}
+                                <v-icon v-if="!item.output" icon="mdi-alert" />  
                                 </v-col>
+
+                                <v-col cols="3" class="text-left">
+                            {{item.hour_complete}}
+                            <v-icon v-if="!item.hour_complete" icon="mdi-alert" />  
+                                </v-col>
+                                <v-col cols="3" class="text-left">
+                                 Ações
+                                </v-col>
+                               
                             </v-row>
                         </v-expansion-panel-text>
                     </v-expansion-panel>

@@ -1,26 +1,40 @@
 <script setup>
-import { Head, router, useForm } from "@inertiajs/vue3";
-import { ref } from "vue";
+import { Head, router, useForm, usePage } from "@inertiajs/vue3";
+import { ref, computed, onMounted } from "vue";
 const form = useForm({
     cpf: null,
     password: null,
 });
 
+const page = usePage();
+
+const errors = computed(() => page.props.errors);
+const loading = ref(false);
+
 
 function login() {
-    router.post('/', form)
+    loading.value = true;
+    router.post("/", form, {
+        onFinish: visit => { loading.value = false},
+    });
 }
+
 </script>
 
 <template>
     <Head title="Login" />
-    <div class="d-flex align-center flex-column login " >
+    <div class="d-flex align-center flex-column login">
         <div class="logo">
             <v-img :width="100" src="/img/logo.png" class="mb-4"></v-img>
         </div>
 
         <v-card width="300">
             <v-card-text>
+                <v-alert v-if="errors.message" type="error" :text="errors.message"  variant="outlined" class="mb-4" style="padding: 0px;">
+                </v-alert>
+                <v-alert v-if="errors.cpf || errors.password" type="error"  variant="outlined" class="mb-4" style="padding: 0px;">
+                    CPF ou senha não pode ser vazio
+                </v-alert>
                 <v-form>
                     <v-text-field
                         label="Colaborador"
@@ -32,7 +46,7 @@ function login() {
                         type="password"
                         v-model="form.password"
                     ></v-text-field>
-                    <v-btn block class="mt-2" @click="login()">Acessar</v-btn>
+                    <v-btn :loading="loading" block class="mt-2" @click="login()">Acessar</v-btn>
                 </v-form>
             </v-card-text>
         </v-card>

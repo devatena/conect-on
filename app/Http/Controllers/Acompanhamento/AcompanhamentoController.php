@@ -48,6 +48,7 @@ class AcompanhamentoController extends Controller
                         $totalMinutos = $totalMinutos - 60;
                     }
                 }
+                
                 if ($v['output'] == null) {
                     $errors++;
                 }

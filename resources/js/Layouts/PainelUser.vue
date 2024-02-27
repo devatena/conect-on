@@ -1,5 +1,5 @@
 <script setup>
-import {usePage} from "@inertiajs/vue3";
+import {usePage, router} from "@inertiajs/vue3";
 import {ref, computed } from "vue";
 
 const drawer = ref(true);
@@ -10,11 +10,19 @@ const page = usePage()
 
 const user = computed(() => page.props.auth.user)
 
+function routePage(href) {
+    router.get(href, "", {
+        replace: true,
+    });
+    
+}
+
 
 
 </script>
 
 <template>
+
     <v-card>
         <v-layout>
             <v-navigation-drawer
@@ -45,13 +53,13 @@ const user = computed(() => page.props.auth.user)
                         prepend-icon="mdi-home"
                         title="Início"
                         value="home"
-                        href="/painel"
+                        @click="routePage('/painel')"
                     ></v-list-item>
                     <v-list-item
                         prepend-icon="mdi-clock"
                         title="Acompanhamento"
                         value="account"
-                        href="/acompanhamento"
+                        @click="routePage('/acompanhamento')"
                     ></v-list-item>
                     <v-list-item
                         prepend-icon="mdi-calendar"
@@ -67,7 +75,7 @@ const user = computed(() => page.props.auth.user)
                         prepend-icon="mdi-close"
                         title="Sair"
                         value="users"
-                        href="/logout"
+                        @click="routePage('/logout')"
                     ></v-list-item>
                 </v-list>
             </v-navigation-drawer>

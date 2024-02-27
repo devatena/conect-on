@@ -17,6 +17,8 @@ function formatDate(dataString) {
 
     return dataFormatada;
 }
+
+
 </script>
 
 <template>
@@ -31,7 +33,6 @@ function formatDate(dataString) {
                     <v-expansion-panel
                         elevation="0"
                         style="background-color: blueviolet; color: white"
-               
                     >
                         <v-expansion-panel-title :hide-actions="true">
                             <v-row no-gutters>
@@ -51,7 +52,7 @@ function formatDate(dataString) {
                         elevation="0"
                         v-for="(day, index) in records.hour"
                     >
-                        <v-expansion-panel-title >
+                        <v-expansion-panel-title>
                             <v-row no-gutters>
                                 <v-col cols="4" class="d-flex justify-start">
                                     {{ formatDate(index.slice(0, 10)) }}
@@ -87,7 +88,8 @@ function formatDate(dataString) {
 
                                 <v-col cols="2" class="text-left">
                                     Tempo trabalhado
-                                </v-col> <v-col cols="2" class="text-left">
+                                </v-col>
+                                <v-col cols="2" class="text-left">
                                     Intervalo
                                 </v-col>
                                 <v-col cols="2" class="text-left">
@@ -124,7 +126,13 @@ function formatDate(dataString) {
                                     00:00
                                 </v-col>
                                 <v-col cols="2" class="text-left">
-                                    <v-btn  prepend-icon="mdi-pencil" variant="outlined" size="x-small" color="orange" class="mb-1">
+                                    <v-btn
+                                        prepend-icon="mdi-pencil"
+                                        variant="outlined"
+                                        size="x-small"
+                                        color="orange"
+                                        class="mb-1"
+                                    >
                                         Ajuste
                                     </v-btn>
                                 </v-col>

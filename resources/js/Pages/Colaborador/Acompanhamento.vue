@@ -77,16 +77,18 @@ function formatDate(dataString) {
                                 class="p-2"
                                 style="background-color: rgb(213, 213, 213)"
                             >
-                                <v-col cols="1" class="text-left"> # </v-col>
-                                <v-col cols="3" class="text-left">
+                                <v-col cols="2" class="text-left"> # </v-col>
+                                <v-col cols="2" class="text-left">
                                     Entrada
                                 </v-col>
-                                <v-col cols="3" class="text-left">
+                                <v-col cols="2" class="text-left">
                                     Saida
                                 </v-col>
 
-                                <v-col cols="3" class="text-left">
+                                <v-col cols="2" class="text-left">
                                     Tempo trabalhado
+                                </v-col> <v-col cols="2" class="text-left">
+                                    Intervalo
                                 </v-col>
                                 <v-col cols="2" class="text-left">
                                     Ações
@@ -97,13 +99,13 @@ function formatDate(dataString) {
                                 :key="index"
                                 no-gutters
                             >
-                                <v-col cols="1" class="text-left">
+                                <v-col cols="2" class="text-left">
                                     {{ count + 1 }}
                                 </v-col>
-                                <v-col cols="3" class="text-left">
+                                <v-col cols="2" class="text-left">
                                     {{ item.input }}
                                 </v-col>
-                                <v-col cols="3" class="text-left">
+                                <v-col cols="2" class="text-left">
                                     {{ item.output }}
                                     <v-icon
                                         v-if="!item.output"
@@ -111,12 +113,15 @@ function formatDate(dataString) {
                                     />
                                 </v-col>
 
-                                <v-col cols="3" class="text-left">
+                                <v-col cols="2" class="text-left">
                                     {{ item.hour_complete }}
                                     <v-icon
                                         v-if="!item.hour_complete"
                                         icon="mdi-alert"
                                     />
+                                </v-col>
+                                <v-col cols="2" class="text-left">
+                                    00:00
                                 </v-col>
                                 <v-col cols="2" class="text-left">
                                     <v-btn  prepend-icon="mdi-pencil" variant="outlined" size="x-small" color="orange" class="mb-1">

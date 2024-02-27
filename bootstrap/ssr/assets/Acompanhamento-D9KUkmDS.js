@@ -46,6 +46,20 @@ const _sfc_main = {
       const dataFormatada = `${data.getDate().toString().padStart(2, "0")}/${(data.getMonth() + 1).toString().padStart(2, "0")}/${data.getFullYear()}`;
       return dataFormatada;
     }
+    function interHours(output, input) {
+      const data1 = /* @__PURE__ */ new Date("1970-01-01T" + output + "Z");
+      const data2 = /* @__PURE__ */ new Date("1970-01-01T" + input + "Z");
+      const diferencaEmMs = Math.abs(data2 - data1);
+      const diferencaEmHoras = diferencaEmMs / (1e3 * 60 * 60);
+      const h = Math.floor(diferencaEmHoras);
+      const m = Math.floor((diferencaEmHoras - h) * 60);
+      const s = Math.round(((diferencaEmHoras - h) * 60 - m) * 60);
+      const horaFormatada = (h < 10 ? "0" : "") + h;
+      const minutoFormatado = (m < 10 ? "0" : "") + m;
+      const segundoFormatado = (s < 10 ? "0" : "") + s;
+      const hora = horaFormatada + ":" + minutoFormatado + ":" + segundoFormatado;
+      return hora;
+    }
     return (_ctx, _push, _parent, _attrs) => {
       const _component_painel_user = resolveComponent("painel-user");
       const _component_v_card = resolveComponent("v-card");
@@ -668,10 +682,11 @@ const _sfc_main = {
                                                     }, {
                                                       default: withCtx((_8, _push9, _parent9, _scopeId8) => {
                                                         if (_push9) {
-                                                          _push9(` 00:00 `);
+                                                          _push9(`${ssrInterpolate(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input))} <br data-v-2862e271${_scopeId8}>`);
                                                         } else {
                                                           return [
-                                                            createTextVNode(" 00:00 ")
+                                                            createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                            createVNode("br")
                                                           ];
                                                         }
                                                       }),
@@ -771,10 +786,11 @@ const _sfc_main = {
                                                         class: "text-left"
                                                       }, {
                                                         default: withCtx(() => [
-                                                          createTextVNode(" 00:00 ")
+                                                          createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                          createVNode("br")
                                                         ]),
-                                                        _: 1
-                                                      }),
+                                                        _: 2
+                                                      }, 1024),
                                                       createVNode(_component_v_col, {
                                                         cols: "2",
                                                         class: "text-left"
@@ -922,10 +938,11 @@ const _sfc_main = {
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
-                                                        createTextVNode(" 00:00 ")
+                                                        createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                        createVNode("br")
                                                       ]),
-                                                      _: 1
-                                                    }),
+                                                      _: 2
+                                                    }, 1024),
                                                     createVNode(_component_v_col, {
                                                       cols: "2",
                                                       class: "text-left"
@@ -1121,10 +1138,11 @@ const _sfc_main = {
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
-                                                      createTextVNode(" 00:00 ")
+                                                      createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                      createVNode("br")
                                                     ]),
-                                                    _: 1
-                                                  }),
+                                                    _: 2
+                                                  }, 1024),
                                                   createVNode(_component_v_col, {
                                                     cols: "2",
                                                     class: "text-left"
@@ -1373,10 +1391,11 @@ const _sfc_main = {
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
-                                                    createTextVNode(" 00:00 ")
+                                                    createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                    createVNode("br")
                                                   ]),
-                                                  _: 1
-                                                }),
+                                                  _: 2
+                                                }, 1024),
                                                 createVNode(_component_v_col, {
                                                   cols: "2",
                                                   class: "text-left"
@@ -1629,10 +1648,11 @@ const _sfc_main = {
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
-                                                  createTextVNode(" 00:00 ")
+                                                  createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                  createVNode("br")
                                                 ]),
-                                                _: 1
-                                              }),
+                                                _: 2
+                                              }, 1024),
                                               createVNode(_component_v_col, {
                                                 cols: "2",
                                                 class: "text-left"
@@ -1890,10 +1910,11 @@ const _sfc_main = {
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
-                                                createTextVNode(" 00:00 ")
+                                                createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                createVNode("br")
                                               ]),
-                                              _: 1
-                                            }),
+                                              _: 2
+                                            }, 1024),
                                             createVNode(_component_v_col, {
                                               cols: "2",
                                               class: "text-left"
@@ -2160,10 +2181,11 @@ const _sfc_main = {
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
-                                              createTextVNode(" 00:00 ")
+                                              createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                              createVNode("br")
                                             ]),
-                                            _: 1
-                                          }),
+                                            _: 2
+                                          }, 1024),
                                           createVNode(_component_v_col, {
                                             cols: "2",
                                             class: "text-left"
@@ -2219,7 +2241,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Colaborador/Acompanhamento.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const Acompanhamento = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-1f4c43fd"]]);
+const Acompanhamento = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-2862e271"]]);
 export {
   Acompanhamento as default
 };

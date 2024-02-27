@@ -2,16 +2,7 @@ import { createSSRApp, h as h$1 } from "vue";
 import { renderToString } from "@vue/server-renderer";
 import { createInertiaApp } from "@inertiajs/vue3";
 import createServer from "@inertiajs/vue3/server";
-async function resolvePageComponent(path, pages) {
-  for (const p2 of Array.isArray(path) ? path : [path]) {
-    const page = pages[p2];
-    if (typeof page === "undefined") {
-      continue;
-    }
-    return typeof page === "function" ? page() : page;
-  }
-  throw new Error(`Page not found: ${path}`);
-}
+import { r as resolvePageComponent } from "./assets/vendor-koWuargk.js";
 function t(t4, r2) {
   for (var n2 = 0; n2 < r2.length; n2++) {
     var e2 = r2[n2];

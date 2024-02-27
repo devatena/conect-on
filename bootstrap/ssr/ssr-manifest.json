@@ -2,7 +2,9 @@
   "\u0000plugin-vue:export-helper": [
     "/build/assets/_plugin-vue_export-helper-1tPrXgE0.js"
   ],
-  "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
+  "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [
+    "/build/assets/vendor-koWuargk.js"
+  ],
   "resources/js/Components/User/CardTitle.vue": [
     "/build/assets/Acompanhamento-D9KUkmDS.js",
     "/build/assets/Acompanhamento-GnG9GKlK.css"

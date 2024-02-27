@@ -23,7 +23,7 @@ class HourController extends Controller
         if (count($recordToDay) === 0) {
             $query = TimeRecording::create([
                 'user_id' => Auth::user()->id,
-                'input' => $now->format('H:i'),
+                'input' => $now->format('H:i:s'),
                 'date' => $date
             ]);
         }
@@ -34,7 +34,7 @@ class HourController extends Controller
             if ($validInput->output !== null) {
                 $query = TimeRecording::create([
                     'user_id' => Auth::user()->id,
-                    'input' => $now->format('H:i'),
+                    'input' => $now->format('H:i:s'),
                     'date' => $date
                 ]);
             }
@@ -56,9 +56,9 @@ class HourController extends Controller
         if (count($recordToDay) > 0) {
             if ($validOutput->output === null) {
                 $diff = Carbon::parse($validOutput->input)->floatDiffInHours($validOutput->output, false);
-                $ht = Carbon::parse('00:00:00')->addRealHours($diff)->format('H:i');
+                $ht = Carbon::parse('00:00:00')->addRealHours($diff)->format('H:i:s');
                 $update = TimeRecording::find($validOutput->id);
-                $update->output = $now->format('H:i');
+                $update->output = $now->format('H:i:s');
                 $update->hour_complete = $ht;
                 $update->save();
             } else {

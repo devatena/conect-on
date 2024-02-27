@@ -31,9 +31,9 @@ function formatDate(dataString) {
                     <v-expansion-panel
                         elevation="0"
                         style="background-color: blueviolet; color: white"
-                        readonly="true"
+               
                     >
-                        <v-expansion-panel-title hide-actions="false">
+                        <v-expansion-panel-title :hide-actions="true">
                             <v-row no-gutters>
                                 <v-col cols="4" class="d-flex justify-start">
                                     Dia
@@ -51,8 +51,8 @@ function formatDate(dataString) {
                         elevation="0"
                         v-for="(day, index) in records.hour"
                     >
-                        <v-expansion-panel-title v-slot="{ open }">
-                            <v-row no-gutters >
+                        <v-expansion-panel-title >
+                            <v-row no-gutters>
                                 <v-col cols="4" class="d-flex justify-start">
                                     {{ formatDate(index.slice(0, 10)) }}
                                 </v-col>
@@ -60,49 +60,69 @@ function formatDate(dataString) {
                                     {{ records.totalHour[index] }}
                                 </v-col>
                                 <v-col cols="4" class="text--secondary">
-                                    <v-icon v-if="!records.errors[index]" icon="mdi-check-all" />
-                                    <v-icon v-if="records.errors[index]" icon="mdi-alert" />
-                                   
+                                    <v-icon
+                                        v-if="!records.errors[index]"
+                                        icon="mdi-check-all"
+                                    />
+                                    <v-icon
+                                        v-if="records.errors[index]"
+                                        icon="mdi-alert"
+                                    />
                                 </v-col>
                             </v-row>
                         </v-expansion-panel-title>
                         <v-expansion-panel-text>
-                            <v-row no-gutters class="p-2" style="background-color: rgb(213, 213, 213);">
+                            <v-row
+                                no-gutters
+                                class="p-2"
+                                style="background-color: rgb(213, 213, 213)"
+                            >
+                                <v-col cols="1" class="text-left"> # </v-col>
                                 <v-col cols="3" class="text-left">
-                                Entrada    
+                                    Entrada
                                 </v-col>
                                 <v-col cols="3" class="text-left">
-                                Saida    
+                                    Saida
                                 </v-col>
 
                                 <v-col cols="3" class="text-left">
-                                 Tempo trabalhado
+                                    Tempo trabalhado
                                 </v-col>
-                                <v-col cols="3" class="text-left">
-                                 Ações
+                                <v-col cols="2" class="text-left">
+                                    Ações
                                 </v-col>
                             </v-row>
                             <v-row
-                                v-for="(item, index) in records.hour[index]"
+                                v-for="(item, count) in records.hour[index]"
                                 :key="index"
                                 no-gutters
                             >
-                             <v-col cols="3" class="text-left">
-                                {{item.input}}    
+                                <v-col cols="1" class="text-left">
+                                    {{ count + 1 }}
+                                </v-col>
+                                <v-col cols="3" class="text-left">
+                                    {{ item.input }}
                                 </v-col>
                                 <v-col cols="3" class="text-left">
                                     {{ item.output }}
-                                <v-icon v-if="!item.output" icon="mdi-alert" />  
+                                    <v-icon
+                                        v-if="!item.output"
+                                        icon="mdi-alert"
+                                    />
                                 </v-col>
 
                                 <v-col cols="3" class="text-left">
-                            {{item.hour_complete}}
-                            <v-icon v-if="!item.hour_complete" icon="mdi-alert" />  
+                                    {{ item.hour_complete }}
+                                    <v-icon
+                                        v-if="!item.hour_complete"
+                                        icon="mdi-alert"
+                                    />
                                 </v-col>
-                                <v-col cols="3" class="text-left">
-                                 Ações
+                                <v-col cols="2" class="text-left">
+                                    <v-btn  prepend-icon="mdi-pencil" variant="outlined" size="x-small" color="orange" class="mb-1">
+                                        Ajuste
+                                    </v-btn>
                                 </v-col>
-                               
                             </v-row>
                         </v-expansion-panel-text>
                     </v-expansion-panel>

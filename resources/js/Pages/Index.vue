@@ -1,6 +1,6 @@
 <script setup>
 import { Head, router, useForm, usePage } from "@inertiajs/vue3";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 const form = useForm({
     cpf: null,
     password: null,
@@ -10,15 +10,17 @@ const page = usePage();
 
 const errors = computed(() => page.props.errors);
 const loading = ref(false);
-
+const showPassword= ref(false)
 
 function login() {
     loading.value = true;
     router.post("/", form, {
-        onFinish: visit => { loading.value = false},
+        replace: true,
+        onFinish: (visit) => {
+            loading.value = false;
+        },
     });
 }
-
 </script>
 
 <template>
@@ -30,9 +32,22 @@ function login() {
 
         <v-card width="300">
             <v-card-text>
-                <v-alert v-if="errors.message" type="error" :text="errors.message"  variant="outlined" class="mb-4" style="padding: 0px;">
+                <v-alert
+                    v-if="errors.message"
+                    type="error"
+                    :text="errors.message"
+                    variant="outlined"
+                    class="mb-4"
+                    style="padding: 0px"
+                >
                 </v-alert>
-                <v-alert v-if="errors.cpf || errors.password" type="error"  variant="outlined" class="mb-4" style="padding: 0px;">
+                <v-alert
+                    v-if="errors.cpf || errors.password"
+                    type="error"
+                    variant="outlined"
+                    class="mb-4"
+                    style="padding: 0px"
+                >
                     CPF ou senha não pode ser vazio
                 </v-alert>
                 <v-form>
@@ -42,11 +57,20 @@ function login() {
                         v-model="form.cpf"
                     ></v-text-field>
                     <v-text-field
+                        :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                         label="Senha"
-                        type="password"
+                        :type="showPassword ? 'text' : 'password'"
                         v-model="form.password"
+                        @click:append-inner="showPassword = !showPassword"
+                        
                     ></v-text-field>
-                    <v-btn :loading="loading" block class="mt-2" @click="login()">Acessar</v-btn>
+                    <v-btn
+                        :loading="loading"
+                        block
+                        class="mt-2"
+                        @click="login()"
+                        >Acessar</v-btn
+                    >
                 </v-form>
             </v-card-text>
         </v-card>
@@ -62,4 +86,6 @@ function login() {
 .v-text-field {
     border-radius: 50px !important;
 }
+
+
 </style>

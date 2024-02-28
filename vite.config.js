@@ -19,16 +19,16 @@ export default defineConfig({
         }),
        
     ],
-    build: {
-        rollupOptions: {
-          output: {
-            manualChunks(id) {
-              if (id.includes('node_modules')) {
-                return 'vendor'; // Agrupa todos os módulos de node_modules em um chunk separado
-              }
-            },
-            chunkSizeWarningLimit: 2000 * 1024, // Define o limite de tamanho do chunk para 1 MB
-          },
-        },
-      },
+    // build: {
+    //     rollupOptions: {
+    //       output: {
+    //         manualChunks(id) {
+    //           if (id.includes('node_modules')) {
+    //             return 'vendor'; // Agrupa todos os módulos de node_modules em um chunk separado
+    //           }
+    //         },
+    //         chunkSizeWarningLimit: 2000 * 1024, // Define o limite de tamanho do chunk para 1 MB
+    //       },
+    //     },
+    //   },
 });

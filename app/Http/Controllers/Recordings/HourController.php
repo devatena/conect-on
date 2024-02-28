@@ -18,7 +18,7 @@ class HourController extends Controller
     {
         $now = Carbon::now();
         $date = $now->format('Y-m-d');
-        $recordToDay = TimeRecording::where('date', $date)->orderBy('created_at', 'desc')->get();
+        $recordToDay = TimeRecording::where('date', $date)->where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
         $validInput = $recordToDay->first();
         if (count($recordToDay) === 0) {
             $query = TimeRecording::create([
@@ -48,7 +48,7 @@ class HourController extends Controller
 
         $now = Carbon::now();
         $date = $now->format('Y-m-d');
-        $recordToDay = TimeRecording::where('date', $date)->orderBy('created_at', 'desc')->get();
+        $recordToDay = TimeRecording::where('date', $date)->where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
         $validOutput = $recordToDay->first();
         if (count($recordToDay) === 0) {
             return 'não pode bater saida';

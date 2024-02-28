@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('01072015')
         ]);
         DB::table('users')->insert([
-            'name' => 'Publicitario',
+            'name' => 'Itala',
             'email' => 'herbet@gmail.com',
-            'cpf' => '12345678910',
+            'cpf' => '97536784520',
             'role' => 'Publicitario',
             'operation' => 'Home Office' ,
             'password' => Hash::make('12345')

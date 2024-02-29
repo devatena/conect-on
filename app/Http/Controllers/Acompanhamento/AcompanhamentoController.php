@@ -16,9 +16,10 @@ class AcompanhamentoController extends Controller
     {
         $dataAtual = Carbon::now();
         $primeiroDiaMes = $dataAtual->firstOfMonth()->format('Y-m-d');
-        $ultimoDiaMes = $dataAtual->endOfMonth()->format('Y-m-d');
+        $ultimoDiaMes = $dataAtual->endOfMonth()->addDay(1)->format('Y-m-d');
+       
 
-        $records = Auth::user()->records->where('date', '>', $primeiroDiaMes)->where('date', '<=', $ultimoDiaMes)->groupBy('date');
+        $records = Auth::user()->records->whereBetween('date',[$primeiroDiaMes, $ultimoDiaMes])->groupBy('date');
 
         $sums = [];
         $nullRecords = [];

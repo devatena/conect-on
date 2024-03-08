@@ -1,35 +1,50 @@
 <script setup>
-import {usePage, router} from "@inertiajs/vue3";
-import {ref, computed } from "vue";
+import { usePage, router } from "@inertiajs/vue3";
+import { watch } from "vue";
+import { onMounted } from "vue";
+import { ref, computed } from "vue";
 
 const drawer = ref(true);
 const rail = ref(false);
 const mobile = ref(false);
 
-const page = usePage()
+const page = usePage();
 
-const user = computed(() => page.props.auth.user)
+const user = computed(() => page.props.auth.user);
 
 function routePage(href) {
     router.get(href, "", {
         replace: true,
     });
-    
+}
+const responsive = ref(window.innerWidth);
+function upSize() {
+    if (window.innerWidth < 600) {
+        rail.value = true;
+    } else {
+        rail.value = false;
+    }
 }
 
+window.addEventListener("resize", upSize);
 
+onMounted(() => {
+    if (responsive.value < 600) {
+        rail.value = true;
+    }
+});
 
+// @click="mobile ? (rail = true) : (rail = false)"
+// @click.stop="rail = true"
 </script>
 
 <template>
-
     <v-card>
         <v-layout>
             <v-navigation-drawer
                 v-model="drawer"
                 :rail="rail"
                 permanent
-                @click="mobile ? (rail = true) : (rail = false)"
                 id="nav"
             >
                 <v-list-item
@@ -37,13 +52,13 @@ function routePage(href) {
                     :title="user.name"
                     nav
                 >
-                    <template v-slot:append>
+                    <!-- <template v-slot:append>
                         <v-btn
                             variant="text"
                             icon="mdi-chevron-left"
                             @click.stop="rail = !rail"
                         ></v-btn>
-                    </template>
+                    </template> -->
                 </v-list-item>
 
                 <v-divider></v-divider>
@@ -58,23 +73,28 @@ function routePage(href) {
                     <v-list-item
                         prepend-icon="mdi-clock"
                         title="Acompanhamento"
-                        value="account"
+                        value="clock"
                         @click="routePage('/acompanhamento')"
                     ></v-list-item>
                     <v-list-item
                         prepend-icon="mdi-calendar"
                         title="Ajuste"
-                        value="users"
+                        value="calendar"
                     ></v-list-item>
                     <v-list-item
                         prepend-icon="mdi-account"
                         title="Meu perfil"
-                        value="users"
+                        value="account"
+                    ></v-list-item>
+                    <v-list-item
+                        prepend-icon="mdi-monitor-dashboard"
+                        title="Painel de gestão"
+                        value="dash"
                     ></v-list-item>
                     <v-list-item
                         prepend-icon="mdi-close"
                         title="Sair"
-                        value="users"
+                        value="close"
                         @click="routePage('/logout')"
                     ></v-list-item>
                 </v-list>

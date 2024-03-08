@@ -3,7 +3,7 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-    plugins: [
+     plugins: [
         laravel({
             input: 'resources/js/app.js',
             ssr: 'resources/js/ssr.js',
@@ -19,4 +19,16 @@ export default defineConfig({
         }),
        
     ],
+    // build: {
+    //     rollupOptions: {
+    //       output: {
+    //         manualChunks(id) {
+    //           if (id.includes('node_modules')) {
+    //             return 'vendor'; // Agrupa todos os módulos de node_modules em um chunk separado
+    //           }
+    //         },
+    //         chunkSizeWarningLimit: 2000 * 1024, // Define o limite de tamanho do chunk para 1 MB
+    //       },
+    //     },
+    //   },
 });

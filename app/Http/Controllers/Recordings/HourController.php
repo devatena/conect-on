@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TimeRecording;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Session;
 
@@ -17,11 +18,12 @@ class HourController extends Controller
     {
         $now = Carbon::now();
         $date = $now->format('Y-m-d');
-        $recordToDay = TimeRecording::where('date', $date)->orderBy('created_at', 'desc')->get();
+        $recordToDay = TimeRecording::where('date', $date)->where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
         $validInput = $recordToDay->first();
         if (count($recordToDay) === 0) {
             $query = TimeRecording::create([
-                'input' => $now->format('H:i'),
+                'user_id' => Auth::user()->id,
+                'input' => $now->format('H:i:s'),
                 'date' => $date
             ]);
         }
@@ -31,7 +33,8 @@ class HourController extends Controller
             }
             if ($validInput->output !== null) {
                 $query = TimeRecording::create([
-                    'input' => $now->format('H:i'),
+                    'user_id' => Auth::user()->id,
+                    'input' => $now->format('H:i:s'),
                     'date' => $date
                 ]);
             }
@@ -45,7 +48,7 @@ class HourController extends Controller
 
         $now = Carbon::now();
         $date = $now->format('Y-m-d');
-        $recordToDay = TimeRecording::where('date', $date)->orderBy('created_at', 'desc')->get();
+        $recordToDay = TimeRecording::where('date', $date)->where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
         $validOutput = $recordToDay->first();
         if (count($recordToDay) === 0) {
             return 'não pode bater saida';
@@ -53,9 +56,9 @@ class HourController extends Controller
         if (count($recordToDay) > 0) {
             if ($validOutput->output === null) {
                 $diff = Carbon::parse($validOutput->input)->floatDiffInHours($validOutput->output, false);
-                $ht = Carbon::parse('00:00:00')->addRealHours($diff)->format('H:i');
+                $ht = Carbon::parse('00:00:00')->addRealHours($diff)->format('H:i:s');
                 $update = TimeRecording::find($validOutput->id);
-                $update->output = $now->format('H:i');
+                $update->output = $now->format('H:i:s');
                 $update->hour_complete = $ht;
                 $update->save();
             } else {

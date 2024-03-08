@@ -27,9 +27,9 @@ const date = new Date();
                 <tbody>
                     <tr v-for="(item, index) in recordToDay.horas" :key="index">
                         <td class="text-left">{{ index+1 }}</td>
-                        <td class="text-left">{{ item.input.slice(0, -3) }}</td>
-                        <td class="text-left">{{ item.output ? item.output.slice(0, -3) : '-----'  }}</td>
-                        <td class="text-left">{{ item.hour_complete ? item.hour_complete.slice(0, -3) : '----'}}</td>
+                        <td class="text-left">{{ item.input }}</td>
+                        <td class="text-left">{{ item.output ? item.output : '-----'  }}</td>
+                        <td class="text-left">{{ item.hour_complete ? item.hour_complete : '----'}}</td>
                     </tr>
                     <tr>
                         <td></td>

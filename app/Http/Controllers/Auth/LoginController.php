@@ -16,29 +16,35 @@ class LoginController extends Controller
 
     public function auth(Request $request)
     {
-        $credentials = [
-            'cpf' => $request->cpf,
-            'password' => $request->password,
-        ];
+        $credentials = $request->validate([
+            'cpf' => ['required'],
+            'password' => ['required'],
+        ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect('/painel');
+        } else {
+
+            return back()->withErrors([
+                'message' => 'Usuário ou Senha inválidos',
+            ]);
         }
 
         // return redirect('/painel');
 
-        
+
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
- 
+
         $request->session()->invalidate();
-     
+
         $request->session()->regenerateToken();
-     
+
         return redirect('/');
     }
 }

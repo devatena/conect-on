@@ -23,11 +23,43 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('01072015')
         ]);
         DB::table('users')->insert([
-            'name' => 'Publicitario',
+            'name' => 'Itala',
             'email' => 'herbet@gmail.com',
-            'cpf' => '12345678910',
+            'cpf' => '97536784520',
             'role' => 'Publicitario',
             'operation' => 'Home Office' ,
+            'password' => Hash::make('12345')
+        ]);
+        DB::table('users')->insert([
+            'name' => 'VIC',
+            'email' => 'herbet@gmail.com',
+            'cpf' => '08314605557',
+            'role' => 'Copy',
+            'operation' => 'Presencial' ,
+            'password' => Hash::make('12345')
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Iara',
+            'email' => 'herbet@gmail.com',
+            'cpf' => '08003089567',
+            'role' => 'Designer',
+            'operation' => 'Presencial' ,
+            'password' => Hash::make('12345')
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Carol',
+            'email' => 'herbet@gmail.com',
+            'cpf' => '09990490546',
+            'role' => 'Atendimento',
+            'operation' => 'Presencial' ,
+            'password' => Hash::make('12345')
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Jonas',
+            'email' => 'herbet@gmail.com',
+            'cpf' => '10095652493',
+            'role' => 'RH',
+            'operation' => 'Presencial' ,
             'password' => Hash::make('12345')
         ]);
     }

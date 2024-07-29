@@ -5,16 +5,13 @@ import EntradaSaida from "@/Components/User/EntradaSaida.vue";
 import JornadaResumo from "@/Components/User/JornadaResumo.vue";
 
 defineProps({
-    recordToDay: Object
-})
-
-
+    recordToDay: Object,
+});
 </script>
 
 <template>
     <Head title="Painel" />
     <painel-user>
-
         <CardUSer />
         <v-row class="pt-4">
             <v-col cols="12" sm="6">

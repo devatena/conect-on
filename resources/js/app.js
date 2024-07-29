@@ -15,6 +15,7 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import PainelUser from './Layouts/PainelUser.vue';
+import PainelGestao from './Layouts/PainelGestao.vue';
 
 
 const vuetify = createVuetify({
@@ -33,6 +34,7 @@ createInertiaApp({
             .use(ZiggyVue)
             .use(vuetify)
             .component('painel-user',PainelUser)
+            .component('painel-gestao',PainelGestao)
             .mount(el);
     },
     progress: {

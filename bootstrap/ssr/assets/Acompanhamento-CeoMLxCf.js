@@ -1,4 +1,4 @@
-import { resolveComponent, mergeProps, withCtx, createTextVNode, toDisplayString, useSSRContext, unref, createVNode, openBlock, createBlock, createCommentVNode, Fragment, renderList } from "vue";
+import { resolveComponent, mergeProps, withCtx, createTextVNode, toDisplayString, openBlock, createBlock, createCommentVNode, useSSRContext, unref, createVNode, Fragment, renderList } from "vue";
 import { ssrRenderComponent, ssrInterpolate, ssrRenderList } from "vue/server-renderer";
 import { Head } from "@inertiajs/vue3";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
@@ -6,11 +6,19 @@ const _sfc_main$1 = {
   __name: "CardTitle",
   __ssrInlineRender: true,
   props: {
-    title: String
+    title: String,
+    back: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(__props) {
+    const goBack = () => {
+      window.history.back();
+    };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_v_card = resolveComponent("v-card");
+      const _component_v_icon = resolveComponent("v-icon");
       _push(ssrRenderComponent(_component_v_card, mergeProps({ class: "mx-auto" }, _attrs), {
         title: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -18,6 +26,28 @@ const _sfc_main$1 = {
           } else {
             return [
               createTextVNode(toDisplayString(__props.title), 1)
+            ];
+          }
+        }),
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            if (__props.back) {
+              _push2(ssrRenderComponent(_component_v_icon, {
+                icon: "mdi-arrow-left",
+                start: "",
+                onClick: ($event) => goBack()
+              }, null, _parent2, _scopeId));
+            } else {
+              _push2(`<!---->`);
+            }
+          } else {
+            return [
+              __props.back ? (openBlock(), createBlock(_component_v_icon, {
+                key: 0,
+                icon: "mdi-arrow-left",
+                start: "",
+                onClick: ($event) => goBack()
+              }, null, 8, ["onClick"])) : createCommentVNode("", true)
             ];
           }
         }),
@@ -32,7 +62,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/User/CardTitle.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const CardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-5689088b"]]);
+const CardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-4cdddc4f"]]);
 const _sfc_main = {
   __name: "Acompanhamento",
   __ssrInlineRender: true,
@@ -272,7 +302,10 @@ const _sfc_main = {
                               }, _parent5, _scopeId4));
                               _push5(`<!--[-->`);
                               ssrRenderList(__props.records.hour, (day, index) => {
-                                _push5(ssrRenderComponent(_component_v_expansion_panel, { elevation: "0" }, {
+                                _push5(ssrRenderComponent(_component_v_expansion_panel, {
+                                  elevation: "0",
+                                  key: index
+                                }, {
                                   default: withCtx((_5, _push6, _parent6, _scopeId5) => {
                                     if (_push6) {
                                       _push6(ssrRenderComponent(_component_v_expansion_panel_title, null, {
@@ -682,10 +715,16 @@ const _sfc_main = {
                                                     }, {
                                                       default: withCtx((_8, _push9, _parent9, _scopeId8) => {
                                                         if (_push9) {
-                                                          _push9(`${ssrInterpolate(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input))} <br data-v-2862e271${_scopeId8}>`);
+                                                          _push9(`${ssrInterpolate(count == 0 ? " " : interHours(
+                                                            __props.records.hour[index][count - 1].output,
+                                                            item.input
+                                                          ))} <br data-v-4fb05b17${_scopeId8}>`);
                                                         } else {
                                                           return [
-                                                            createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                            createTextVNode(toDisplayString(count == 0 ? " " : interHours(
+                                                              __props.records.hour[index][count - 1].output,
+                                                              item.input
+                                                            )) + " ", 1),
                                                             createVNode("br")
                                                           ];
                                                         }
@@ -786,7 +825,10 @@ const _sfc_main = {
                                                         class: "text-left"
                                                       }, {
                                                         default: withCtx(() => [
-                                                          createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                          createTextVNode(toDisplayString(count == 0 ? " " : interHours(
+                                                            __props.records.hour[index][count - 1].output,
+                                                            item.input
+                                                          )) + " ", 1),
                                                           createVNode("br")
                                                         ]),
                                                         _: 2
@@ -938,7 +980,10 @@ const _sfc_main = {
                                                       class: "text-left"
                                                     }, {
                                                       default: withCtx(() => [
-                                                        createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                        createTextVNode(toDisplayString(count == 0 ? " " : interHours(
+                                                          __props.records.hour[index][count - 1].output,
+                                                          item.input
+                                                        )) + " ", 1),
                                                         createVNode("br")
                                                       ]),
                                                       _: 2
@@ -1138,7 +1183,10 @@ const _sfc_main = {
                                                     class: "text-left"
                                                   }, {
                                                     default: withCtx(() => [
-                                                      createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                      createTextVNode(toDisplayString(count == 0 ? " " : interHours(
+                                                        __props.records.hour[index][count - 1].output,
+                                                        item.input
+                                                      )) + " ", 1),
                                                       createVNode("br")
                                                     ]),
                                                     _: 2
@@ -1225,7 +1273,10 @@ const _sfc_main = {
                                   _: 1
                                 }),
                                 (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour, (day, index) => {
-                                  return openBlock(), createBlock(_component_v_expansion_panel, { elevation: "0" }, {
+                                  return openBlock(), createBlock(_component_v_expansion_panel, {
+                                    elevation: "0",
+                                    key: index
+                                  }, {
                                     default: withCtx(() => [
                                       createVNode(_component_v_expansion_panel_title, null, {
                                         default: withCtx(() => [
@@ -1391,7 +1442,10 @@ const _sfc_main = {
                                                   class: "text-left"
                                                 }, {
                                                   default: withCtx(() => [
-                                                    createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                    createTextVNode(toDisplayString(count == 0 ? " " : interHours(
+                                                      __props.records.hour[index][count - 1].output,
+                                                      item.input
+                                                    )) + " ", 1),
                                                     createVNode("br")
                                                   ]),
                                                   _: 2
@@ -1426,7 +1480,7 @@ const _sfc_main = {
                                     ]),
                                     _: 2
                                   }, 1024);
-                                }), 256))
+                                }), 128))
                               ];
                             }
                           }),
@@ -1482,7 +1536,10 @@ const _sfc_main = {
                                 _: 1
                               }),
                               (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour, (day, index) => {
-                                return openBlock(), createBlock(_component_v_expansion_panel, { elevation: "0" }, {
+                                return openBlock(), createBlock(_component_v_expansion_panel, {
+                                  elevation: "0",
+                                  key: index
+                                }, {
                                   default: withCtx(() => [
                                     createVNode(_component_v_expansion_panel_title, null, {
                                       default: withCtx(() => [
@@ -1648,7 +1705,10 @@ const _sfc_main = {
                                                 class: "text-left"
                                               }, {
                                                 default: withCtx(() => [
-                                                  createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                  createTextVNode(toDisplayString(count == 0 ? " " : interHours(
+                                                    __props.records.hour[index][count - 1].output,
+                                                    item.input
+                                                  )) + " ", 1),
                                                   createVNode("br")
                                                 ]),
                                                 _: 2
@@ -1683,7 +1743,7 @@ const _sfc_main = {
                                   ]),
                                   _: 2
                                 }, 1024);
-                              }), 256))
+                              }), 128))
                             ]),
                             _: 1
                           })
@@ -1744,7 +1804,10 @@ const _sfc_main = {
                               _: 1
                             }),
                             (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour, (day, index) => {
-                              return openBlock(), createBlock(_component_v_expansion_panel, { elevation: "0" }, {
+                              return openBlock(), createBlock(_component_v_expansion_panel, {
+                                elevation: "0",
+                                key: index
+                              }, {
                                 default: withCtx(() => [
                                   createVNode(_component_v_expansion_panel_title, null, {
                                     default: withCtx(() => [
@@ -1910,7 +1973,10 @@ const _sfc_main = {
                                               class: "text-left"
                                             }, {
                                               default: withCtx(() => [
-                                                createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                                createTextVNode(toDisplayString(count == 0 ? " " : interHours(
+                                                  __props.records.hour[index][count - 1].output,
+                                                  item.input
+                                                )) + " ", 1),
                                                 createVNode("br")
                                               ]),
                                               _: 2
@@ -1945,7 +2011,7 @@ const _sfc_main = {
                                 ]),
                                 _: 2
                               }, 1024);
-                            }), 256))
+                            }), 128))
                           ]),
                           _: 1
                         })
@@ -2015,7 +2081,10 @@ const _sfc_main = {
                             _: 1
                           }),
                           (openBlock(true), createBlock(Fragment, null, renderList(__props.records.hour, (day, index) => {
-                            return openBlock(), createBlock(_component_v_expansion_panel, { elevation: "0" }, {
+                            return openBlock(), createBlock(_component_v_expansion_panel, {
+                              elevation: "0",
+                              key: index
+                            }, {
                               default: withCtx(() => [
                                 createVNode(_component_v_expansion_panel_title, null, {
                                   default: withCtx(() => [
@@ -2181,7 +2250,10 @@ const _sfc_main = {
                                             class: "text-left"
                                           }, {
                                             default: withCtx(() => [
-                                              createTextVNode(toDisplayString(count == 0 ? " " : interHours(__props.records.hour[index][count - 1].output, item.input)) + " ", 1),
+                                              createTextVNode(toDisplayString(count == 0 ? " " : interHours(
+                                                __props.records.hour[index][count - 1].output,
+                                                item.input
+                                              )) + " ", 1),
                                               createVNode("br")
                                             ]),
                                             _: 2
@@ -2216,7 +2288,7 @@ const _sfc_main = {
                               ]),
                               _: 2
                             }, 1024);
-                          }), 256))
+                          }), 128))
                         ]),
                         _: 1
                       })
@@ -2241,7 +2313,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Colaborador/Acompanhamento.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const Acompanhamento = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-2862e271"]]);
+const Acompanhamento = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-4fb05b17"]]);
 export {
   Acompanhamento as default
 };

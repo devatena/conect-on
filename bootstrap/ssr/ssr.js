@@ -485,13 +485,13 @@ var f = String.prototype.replace, a = /%20/g, c = "RFC3986", l = { default: c, f
   };
   t4.mixin({ methods: { route: n2 } }), parseInt(t4.version) > 2 && t4.provide("route", n2);
 } };
-const appName = "ConectON";
+const appName = "Laravel";
 createServer(
   (page) => createInertiaApp({
     page,
     render: renderToString,
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Colaborador/Acompanhamento.vue": () => import("./assets/Acompanhamento-D9KUkmDS.js"), "./Pages/Colaborador/Painel.vue": () => import("./assets/Painel-CehDVcfB.js"), "./Pages/Index.vue": () => import("./assets/Index-D3rFLod3.js") })),
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Colaborador/Acompanhamento.vue": () => import("./assets/Acompanhamento-CeoMLxCf.js"), "./Pages/Colaborador/Painel.vue": () => import("./assets/Painel-y_0xxC1O.js"), "./Pages/Gestao/Acompanhamento/Index.vue": () => import("./assets/Index-BO2cEwjF.js"), "./Pages/Gestao/Index.vue": () => import("./assets/Index-BHvFY5mh.js"), "./Pages/Gestao/Prestadores/Index.vue": () => import("./assets/Index-ByIziXQB.js"), "./Pages/Index.vue": () => import("./assets/Index-D3rFLod3.js") })),
     setup({ App, props, plugin }) {
       return createSSRApp({ render: () => h$1(App, props) }).use(plugin).use(P, {
         ...page.props.ziggy,

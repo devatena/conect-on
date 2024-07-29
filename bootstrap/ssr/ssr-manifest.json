@@ -60,10 +60,16 @@
     "/build/assets/Painel-DGbOg8bS.css"
   ],
   "resources/js/Pages/Gestao/Acompanhamento/Index.vue": [
-    "/build/assets/Index-BO2cEwjF.js"
+    "/build/assets/Index-D2Auxb4d.js",
+    "/build/assets/Index-Br6ZIP_n.css"
   ],
   "resources/js/Pages/Gestao/Acompanhamento/Index.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Index-BO2cEwjF.js"
+    "/build/assets/Index-D2Auxb4d.js",
+    "/build/assets/Index-Br6ZIP_n.css"
+  ],
+  "resources/js/Pages/Gestao/Acompanhamento/Index.vue?vue&type=style&index=0&scoped=5e1c9923&lang.css": [
+    "/build/assets/Index-D2Auxb4d.js",
+    "/build/assets/Index-Br6ZIP_n.css"
   ],
   "resources/js/Pages/Gestao/Index.vue": [
     "/build/assets/Index-BHvFY5mh.js",

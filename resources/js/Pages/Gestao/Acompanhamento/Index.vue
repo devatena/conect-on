@@ -12,13 +12,27 @@
                 ></v-select>
             </v-col>
             <v-col cols="3">
-                <v-text-field label="Data Inicial" type="date"></v-text-field>
+                <v-text-field
+                    v-model="date.dataInicial"
+                    label="Data Inicial"
+                    type="date"
+                ></v-text-field>
             </v-col>
             <v-col cols="3">
-                <v-text-field label="Data Inicial" type="date"></v-text-field>
+                <v-text-field
+                    v-model="date.dataFinal"
+                    label="Data Final"
+                    type="date"
+                ></v-text-field> </v-col
+            ><v-col cols="2" class="btn-filter">
+                <v-btn @click="searchList()" class="btn-search" :disabled="selectedId == null"> Buscar</v-btn>
+                <v-btn @click="cleanfilter()"> Limpar Filtro</v-btn>
             </v-col>
         </v-row>
-        <v-expansion-panels variant="accordion">
+        <v-expansion-panels
+            variant="accordion"
+            v-if="JSON.stringify(records.hour) !== '[]'"
+        >
             <v-expansion-panel
                 elevation="0"
                 style="background-color: blueviolet; color: white"
@@ -125,11 +139,17 @@
                 </v-expansion-panel-text>
             </v-expansion-panel>
         </v-expansion-panels>
+        <div v-else-if="selected" class="mensagem">
+            <h1>Nenhum dado encontrado!</h1>
+        </div>
+        <div v-else class="mensagem">
+            <h1>Selecione um prestador!</h1>
+        </div>
     </painel-gestao>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, onMounted, reactive } from "vue";
 import { router } from "@inertiajs/vue3";
 
 const pageTitle = ref(" | Acompanhamento de Horas");
@@ -137,20 +157,32 @@ const pageTitle = ref(" | Acompanhamento de Horas");
 const props = defineProps({
     records: Object,
     prestadores: Object,
-    selected: Number
+    selected: Number,
+    dateFilter: {
+        type: Object,
+        default: {
+            dataInicial: '',
+            dataFinal: ''
+        }
+    }
 });
+
+const date: any = reactive({
+    dataInicial: props.dateFilter.dataInicial,
+    dataFinal:  props.dateFilter.dataFinal
+});
+
 
 const selectedId: any = ref(props.selected);
 
-watch(selectedId, () => {
-    searchList();
-});
 
 function searchList() {
     router.visit("/gestao/acompanhamento", {
         method: "post",
         data: {
             id: selectedId.value,
+            dataInicial: date.dataInicial,
+            dataFinal: date.dataFinal,
         },
     });
 }
@@ -197,6 +229,34 @@ function interHours(output, input) {
 
     return hora;
 }
+
+function cleanfilter(){
+    date.dataInicial = '';
+    date.dataFinal = '';
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+.mensagem {
+    text-align: center;
+    font-size: 24px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.btn-filter{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    padding-top: 20px;
+    gap: 8px;
+}
+
+.btn-search{
+    background-color: blueviolet;
+    color: white;
+}
+/* .v-btn{
+    margin-right: 5px;
+} */
+</style>

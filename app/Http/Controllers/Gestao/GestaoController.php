@@ -31,16 +31,18 @@ class GestaoController extends Controller
     public function acompanhamento(Request $request)
     {
         $prestadores = User::all();
-    
 
         if ($request->id) {
+            if ($request->dataInicial == null || $request->dataFinal == null) {
+                $dataAtual = Carbon::now();
+                $dataInicial = $dataAtual->firstOfMonth()->format('Y-m-d');
+                $dataFinal = $dataAtual->endOfMonth()->addDay(1)->format('Y-m-d');
+            } elseif ($request->dataInicial !== null && $request->dataFinal !== null) {
+                $dataInicial = Carbon::createFromFormat('Y-m-d', $request->dataInicial)->format('Y-m-d');
+                $dataFinal = Carbon::createFromFormat('Y-m-d', $request->dataFinal)->addDay(1)->format('Y-m-d');
+            }
 
-            $dataAtual = Carbon::now();
-            $primeiroDiaMes = $dataAtual->firstOfMonth()->format('Y-m-d');
-            $ultimoDiaMes = $dataAtual->endOfMonth()->addDay(1)->format('Y-m-d');
-
-
-            $records = User::find($request->id)->records->whereBetween('date', [$primeiroDiaMes, $ultimoDiaMes])->groupBy('date');
+            $records = User::find($request->id)->records->whereBetween('date', [$dataInicial, $dataFinal])->groupBy('date');
 
             $sums = [];
             $nullRecords = [];
@@ -87,7 +89,11 @@ class GestaoController extends Controller
                     'errors' => $nullRecords
                 ],
                 'prestadores' => $prestadores,
-                'selected' => $request->id
+                'selected' => $request->id,
+                'dateFilter' => [
+                    'dataInicial' => $request->dataInicial,
+                    'dataFinal' => $request->dataFinal,
+                ]
             ]);
         }
 

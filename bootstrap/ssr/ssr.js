@@ -485,7 +485,7 @@ var f = String.prototype.replace, a = /%20/g, c = "RFC3986", l = { default: c, f
   };
   t4.mixin({ methods: { route: n2 } }), parseInt(t4.version) > 2 && t4.provide("route", n2);
 } };
-const appName = "Laravel";
+const appName = "ConectON";
 createServer(
   (page) => createInertiaApp({
     page,

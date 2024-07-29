@@ -110,10 +110,10 @@ const _sfc_main$2 = {
       _push(ssrRenderComponent(_component_v_card, mergeProps({ class: "mx-auto" }, _attrs), {
         title: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` Registro`);
+            _push2(` Registro de disponibilidade`);
           } else {
             return [
-              createTextVNode(" Registro")
+              createTextVNode(" Registro de disponibilidade")
             ];
           }
         }),
@@ -128,7 +128,7 @@ const _sfc_main$2 = {
                     size: "50",
                     color: "purple"
                   }, null, _parent3, _scopeId2));
-                  _push3(`<p class="time mb-5" data-v-de6c34cb${_scopeId2}>${ssrInterpolate(time.value)}</p><div class="btn-register" data-v-de6c34cb${_scopeId2}>`);
+                  _push3(`<p class="time mb-5" data-v-5a4a387c${_scopeId2}>${ssrInterpolate(time.value)}</p><div class="btn-register" data-v-5a4a387c${_scopeId2}>`);
                   _push3(ssrRenderComponent(_component_v_btn, {
                     style: { "background": "blueviolet" },
                     onClick: ($event) => input(),
@@ -248,7 +248,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/User/EntradaSaida.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const EntradaSaida = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-de6c34cb"]]);
+const EntradaSaida = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-5a4a387c"]]);
 const _sfc_main$1 = {
   __name: "JornadaResumo",
   __ssrInlineRender: true,

@@ -16,7 +16,7 @@
     "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
   "resources/js/Pages/Colaborador/Acompanhamento.vue": {
-    "file": "assets/Acompanhamento-mf6fMNoX.js",
+    "file": "assets/Acompanhamento-B7G4tbCc.js",
     "src": "resources/js/Pages/Colaborador/Acompanhamento.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -27,18 +27,18 @@
     ]
   },
   "resources/js/Pages/Colaborador/Painel.vue": {
-    "file": "assets/Painel-DTCS3vfc.js",
+    "file": "assets/Painel-Cz5uWL49.js",
     "src": "resources/js/Pages/Colaborador/Painel.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js"
     ],
     "css": [
-      "assets/Painel-D1HZRqvE.css"
+      "assets/Painel-BPyZcc64.css"
     ]
   },
   "resources/js/Pages/Gestao/Acompanhamento/Index.vue": {
-    "file": "assets/Index-t5f_GJpu.js",
+    "file": "assets/Index-U_Ffxkgf.js",
     "src": "resources/js/Pages/Gestao/Acompanhamento/Index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -49,7 +49,7 @@
     ]
   },
   "resources/js/Pages/Gestao/Index.vue": {
-    "file": "assets/Index-D35ZSCgj.js",
+    "file": "assets/Index-BR0IwGo8.js",
     "src": "resources/js/Pages/Gestao/Index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -60,29 +60,29 @@
     ]
   },
   "resources/js/Pages/Gestao/Prestadores/Index.vue": {
-    "file": "assets/Index-BUHYkmgG.js",
+    "file": "assets/Index-EDy3OJge.js",
     "src": "resources/js/Pages/Gestao/Prestadores/Index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js"
     ],
     "css": [
-      "assets/Index-D-3NqQbF.css"
+      "assets/Index-DvADw9jK.css"
     ]
   },
   "resources/js/Pages/Index.vue": {
-    "file": "assets/Index-BmEOHJIa.js",
+    "file": "assets/Index-Cg7DMlOa.js",
     "src": "resources/js/Pages/Index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js"
     ],
     "css": [
-      "assets/Index-Bi6k2Qr7.css"
+      "assets/Index-XEjBgad9.css"
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-DfscWrH4.js",
+    "file": "assets/app-DPwSx-UI.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -94,7 +94,7 @@
       "resources/js/Pages/Index.vue"
     ],
     "css": [
-      "assets/app-XBBRDNw1.css"
+      "assets/app-BKCoAJCw.css"
     ],
     "assets": [
       "assets/materialdesignicons-webfont-CSr8KVlo.eot",

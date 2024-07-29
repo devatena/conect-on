@@ -33,7 +33,7 @@ const _sfc_main = {
       const _component_v_btn = resolveComponent("v-btn");
       _push(`<!--[-->`);
       _push(ssrRenderComponent(unref(Head), { title: "Login" }, null, _parent));
-      _push(`<div class="d-flex align-center flex-column login" data-v-430e342b><div class="logo" data-v-430e342b>`);
+      _push(`<div class="d-flex align-center flex-column login" data-v-cc2a7729><div class="logo" data-v-cc2a7729>`);
       _push(ssrRenderComponent(_component_v_img, {
         width: 100,
         src: "/img/logo.png",
@@ -82,7 +82,7 @@ const _sfc_main = {
                     default: withCtx((_3, _push4, _parent4, _scopeId3) => {
                       if (_push4) {
                         _push4(ssrRenderComponent(_component_v_text_field, {
-                          label: "Colaborador",
+                          label: "Prestador de Serviço",
                           type: "text",
                           modelValue: unref(form).cpf,
                           "onUpdate:modelValue": ($event) => unref(form).cpf = $event
@@ -115,7 +115,7 @@ const _sfc_main = {
                       } else {
                         return [
                           createVNode(_component_v_text_field, {
-                            label: "Colaborador",
+                            label: "Prestador de Serviço",
                             type: "text",
                             modelValue: unref(form).cpf,
                             "onUpdate:modelValue": ($event) => unref(form).cpf = $event
@@ -169,7 +169,7 @@ const _sfc_main = {
                     createVNode(_component_v_form, null, {
                       default: withCtx(() => [
                         createVNode(_component_v_text_field, {
-                          label: "Colaborador",
+                          label: "Prestador de Serviço",
                           type: "text",
                           modelValue: unref(form).cpf,
                           "onUpdate:modelValue": ($event) => unref(form).cpf = $event
@@ -228,7 +228,7 @@ const _sfc_main = {
                   createVNode(_component_v_form, null, {
                     default: withCtx(() => [
                       createVNode(_component_v_text_field, {
-                        label: "Colaborador",
+                        label: "Prestador de Serviço",
                         type: "text",
                         modelValue: unref(form).cpf,
                         "onUpdate:modelValue": ($event) => unref(form).cpf = $event
@@ -273,7 +273,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const Index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-430e342b"]]);
+const Index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-cc2a7729"]]);
 export {
   Index as default
 };

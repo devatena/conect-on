@@ -39,7 +39,7 @@ updateClock();
 
 <template>
     <v-card class="mx-auto">
-        <template v-slot:title> Registro</template>
+        <template v-slot:title> Registro de disponibilidade</template>
 
         <v-card-text>
             <v-icon

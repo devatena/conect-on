@@ -3,6 +3,7 @@
 use App\Http\Controllers\Acompanhamento\AcompanhamentoController;
 use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\Gestao\GestaoController;
+use App\Http\Controllers\Prestador\PrestadorController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->prefix('painel')->group( function () {
@@ -16,7 +17,12 @@ Route::middleware('auth')->prefix('acompanhamento')->group( function () {
 
 Route::middleware(['auth', 'isadmin'])->prefix('gestao')->group( function () {
     Route::get('/',  [GestaoController::class, 'index'])->name('gestao');
-    Route::get('prestadores', [GestaoController::class, 'prestadores'])->name('prestadores');
+
+    Route::prefix('prestadores')->group( function (){
+        Route::get('/', [GestaoController::class, 'prestadores'])->name('prestadores');
+        Route::delete('{id}', [PrestadorController::class, 'destroy'])->name('prestador.destroy');
+    });
+
     Route::get('acompanhamento', [GestaoController::class, 'acompanhamento'])->name('acompanhamento');
     Route::post('acompanhamento', [GestaoController::class, 'acompanhamento'])->name('acompanhamento');
 });

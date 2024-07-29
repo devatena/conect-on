@@ -52,7 +52,7 @@ function login() {
                 </v-alert>
                 <v-form>
                     <v-text-field
-                        label="Colaborador"
+                        label="Prestador de Serviço"
                         type="text"
                         v-model="form.cpf"
                     ></v-text-field>

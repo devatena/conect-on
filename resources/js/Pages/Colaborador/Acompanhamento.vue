@@ -18,32 +18,29 @@ function formatDate(dataString) {
     return dataFormatada;
 }
 
-function interHours(output, input){
+function interHours(output, input) {
+    // Convertendo as strings em objetos Date
+    const data1 = new Date("1970-01-01T" + output + "Z");
+    const data2 = new Date("1970-01-01T" + input + "Z");
+    const diferencaEmMs = Math.abs(data2 - data1);
 
-// Convertendo as strings em objetos Date
-const data1 = new Date("1970-01-01T" + output + "Z");
-const data2 = new Date("1970-01-01T" + input + "Z");
-const diferencaEmMs = Math.abs(data2 - data1);
+    // Convertendo a diferença para horas
+    const diferencaEmHoras = diferencaEmMs / (1000 * 60 * 60);
 
-// Convertendo a diferença para horas
-const diferencaEmHoras = diferencaEmMs / (1000 * 60 * 60);
+    // Separando em horas e minutos
+    const h = Math.floor(diferencaEmHoras);
+    const m = Math.floor((diferencaEmHoras - h) * 60);
+    const s = Math.round(((diferencaEmHoras - h) * 60 - m) * 60);
 
-  // Separando em horas e minutos
-  const h = Math.floor(diferencaEmHoras);
-  const m = Math.floor((diferencaEmHoras - h) * 60);
-  const s = Math.round(((diferencaEmHoras - h) * 60 - m) * 60);
+    // Formatando para o padrão "00:00"
+    const horaFormatada = (h < 10 ? "0" : "") + h;
+    const minutoFormatado = (m < 10 ? "0" : "") + m;
+    const segundoFormatado = (s < 10 ? "0" : "") + s;
 
-  // Formatando para o padrão "00:00"
-  const horaFormatada = (h < 10 ? "0" : "") + h;
-  const minutoFormatado = (m < 10 ? "0" : "") + m;
-  const segundoFormatado = (s < 10 ? "0" : "") + s;
+    const hora = horaFormatada + ":" + minutoFormatado + ":" + segundoFormatado;
 
-  const hora = horaFormatada + ":" + minutoFormatado + ":" + segundoFormatado;
-
-return hora
+    return hora;
 }
-
-
 </script>
 
 <template>
@@ -76,6 +73,7 @@ return hora
                     <v-expansion-panel
                         elevation="0"
                         v-for="(day, index) in records.hour"
+                        :key="index"
                     >
                         <v-expansion-panel-title>
                             <v-row no-gutters>
@@ -133,7 +131,7 @@ return hora
                                     {{ item.input }}
                                 </v-col>
                                 <v-col cols="2" class="text-left">
-                                    {{ item.output }}   
+                                    {{ item.output }}
                                     <v-icon
                                         v-if="!item.output"
                                         icon="mdi-alert"
@@ -148,7 +146,16 @@ return hora
                                     />
                                 </v-col>
                                 <v-col cols="2" class="text-left">
-                                    {{ (count == 0) ? ' ' : interHours(records.hour[index][count-1].output, item.input)  }} <br>
+                                    {{
+                                        count == 0
+                                            ? " "
+                                            : interHours(
+                                                  records.hour[index][count - 1]
+                                                      .output,
+                                                  item.input
+                                              )
+                                    }}
+                                    <br />
                                 </v-col>
                                 <v-col cols="2" class="text-left">
                                     <v-btn

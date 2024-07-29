@@ -11,6 +11,7 @@ const mobile = ref(false);
 const page = usePage();
 
 const user = computed(() => page.props.auth.user);
+const isAdmin = computed(() => page.props.auth.isAdmin);
 
 function routePage(href) {
     router.get(href, "", {
@@ -87,9 +88,12 @@ onMounted(() => {
                         value="account"
                     ></v-list-item>
                     <v-list-item
+                    v-if="isAdmin"
                         prepend-icon="mdi-monitor-dashboard"
                         title="Painel de gestão"
                         value="dash"
+                        @click="routePage('/gestao')"
+
                     ></v-list-item>
                     <v-list-item
                         prepend-icon="mdi-close"

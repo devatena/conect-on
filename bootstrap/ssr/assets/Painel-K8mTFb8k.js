@@ -1,4 +1,4 @@
-import { computed, resolveComponent, mergeProps, withCtx, createTextVNode, toDisplayString, createVNode, useSSRContext, ref, unref, openBlock, createBlock, Fragment, renderList, defineComponent } from "vue";
+import { computed, resolveComponent, mergeProps, withCtx, createTextVNode, toDisplayString, createVNode, useSSRContext, ref, unref, openBlock, createBlock, Fragment, renderList, defineComponent, createCommentVNode } from "vue";
 import { ssrRenderComponent, ssrInterpolate, ssrRenderList } from "vue/server-renderer";
 import { usePage, router, Head } from "@inertiajs/vue3";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
@@ -26,7 +26,7 @@ const _sfc_main$3 = {
             _push2(ssrRenderComponent(_component_v_card_text, null, {
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
-                  _push3(`<p data-v-21a9aa62${_scopeId2}><strong data-v-21a9aa62${_scopeId2}>Função:</strong> ${ssrInterpolate(user.value.role)}</p><p data-v-21a9aa62${_scopeId2}><strong data-v-21a9aa62${_scopeId2}>Local:</strong> ${ssrInterpolate(user.value.operation)}</p>`);
+                  _push3(`<p data-v-b79d73cc${_scopeId2}><strong data-v-b79d73cc${_scopeId2}>Função:</strong> ${ssrInterpolate(user.value.role)}</p><p data-v-b79d73cc${_scopeId2}><strong data-v-b79d73cc${_scopeId2}>Operação:</strong> ${ssrInterpolate(user.value.operation)}</p>`);
                 } else {
                   return [
                     createVNode("p", null, [
@@ -34,7 +34,7 @@ const _sfc_main$3 = {
                       createTextVNode(" " + toDisplayString(user.value.role), 1)
                     ]),
                     createVNode("p", null, [
-                      createVNode("strong", null, "Local:"),
+                      createVNode("strong", null, "Operação:"),
                       createTextVNode(" " + toDisplayString(user.value.operation), 1)
                     ])
                   ];
@@ -51,7 +51,7 @@ const _sfc_main$3 = {
                     createTextVNode(" " + toDisplayString(user.value.role), 1)
                   ]),
                   createVNode("p", null, [
-                    createVNode("strong", null, "Local:"),
+                    createVNode("strong", null, "Operação:"),
                     createTextVNode(" " + toDisplayString(user.value.operation), 1)
                   ])
                 ]),
@@ -71,7 +71,7 @@ _sfc_main$3.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/User/CardUser.vue");
   return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const CardUSer = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-21a9aa62"]]);
+const CardUSer = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-b79d73cc"]]);
 const _sfc_main$2 = {
   __name: "EntradaSaida",
   __ssrInlineRender: true,
@@ -409,8 +409,18 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     recordToDay: Object
   },
   setup(__props) {
+    const page = usePage();
+    const feedback = computed(() => {
+      return {
+        message: page.props.flash.message,
+        link: page.props.flash.messageLink
+      };
+    });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_painel_user = resolveComponent("painel-user");
+      const _component_v_alert = resolveComponent("v-alert");
+      const _component_v_btn = resolveComponent("v-btn");
+      const _component_v_icon = resolveComponent("v-icon");
       const _component_v_row = resolveComponent("v-row");
       const _component_v_col = resolveComponent("v-col");
       _push(`<!--[-->`);
@@ -419,6 +429,65 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             _push2(ssrRenderComponent(CardUSer, null, null, _parent2, _scopeId));
+            if (feedback.value.message) {
+              _push2(ssrRenderComponent(_component_v_alert, {
+                text: feedback.value.message,
+                title: "Sucesso",
+                type: "success",
+                class: "mt-4"
+              }, {
+                default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                  if (_push3) {
+                    _push3(`<br data-v-a04d58de${_scopeId2}>`);
+                    _push3(ssrRenderComponent(_component_v_btn, {
+                      "prepend-icon": "mdi-send",
+                      href: feedback.value.link,
+                      target: "_blank"
+                    }, {
+                      prepend: withCtx((_3, _push4, _parent4, _scopeId3) => {
+                        if (_push4) {
+                          _push4(ssrRenderComponent(_component_v_icon, { color: "info" }, null, _parent4, _scopeId3));
+                        } else {
+                          return [
+                            createVNode(_component_v_icon, { color: "info" })
+                          ];
+                        }
+                      }),
+                      default: withCtx((_3, _push4, _parent4, _scopeId3) => {
+                        if (_push4) {
+                          _push4(` Compartilhar registro no telegram `);
+                        } else {
+                          return [
+                            createTextVNode(" Compartilhar registro no telegram ")
+                          ];
+                        }
+                      }),
+                      _: 1
+                    }, _parent3, _scopeId2));
+                  } else {
+                    return [
+                      createVNode("br"),
+                      createVNode(_component_v_btn, {
+                        "prepend-icon": "mdi-send",
+                        href: feedback.value.link,
+                        target: "_blank"
+                      }, {
+                        prepend: withCtx(() => [
+                          createVNode(_component_v_icon, { color: "info" })
+                        ]),
+                        default: withCtx(() => [
+                          createTextVNode(" Compartilhar registro no telegram ")
+                        ]),
+                        _: 1
+                      }, 8, ["href"])
+                    ];
+                  }
+                }),
+                _: 1
+              }, _parent2, _scopeId));
+            } else {
+              _push2(`<!---->`);
+            }
             _push2(ssrRenderComponent(_component_v_row, { class: "pt-4" }, {
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
@@ -480,6 +549,31 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           } else {
             return [
               createVNode(CardUSer),
+              feedback.value.message ? (openBlock(), createBlock(_component_v_alert, {
+                key: 0,
+                text: feedback.value.message,
+                title: "Sucesso",
+                type: "success",
+                class: "mt-4"
+              }, {
+                default: withCtx(() => [
+                  createVNode("br"),
+                  createVNode(_component_v_btn, {
+                    "prepend-icon": "mdi-send",
+                    href: feedback.value.link,
+                    target: "_blank"
+                  }, {
+                    prepend: withCtx(() => [
+                      createVNode(_component_v_icon, { color: "info" })
+                    ]),
+                    default: withCtx(() => [
+                      createTextVNode(" Compartilhar registro no telegram ")
+                    ]),
+                    _: 1
+                  }, 8, ["href"])
+                ]),
+                _: 1
+              }, 8, ["text"])) : createCommentVNode("", true),
               createVNode(_component_v_row, { class: "pt-4" }, {
                 default: withCtx(() => [
                   createVNode(_component_v_col, {
@@ -518,6 +612,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Colaborador/Painel.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
+const Painel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-a04d58de"]]);
 export {
-  _sfc_main as default
+  Painel as default
 };

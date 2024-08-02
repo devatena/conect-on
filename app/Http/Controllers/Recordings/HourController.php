@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 class HourController extends Controller
 {
 
-      public function input()
+    public function input()
     {
         $now = Carbon::now();
         $date = $now->format('Y-m-d');
@@ -40,7 +40,7 @@ class HourController extends Controller
             }
         }
 
-        return redirect()->back();
+        return  redirect()->route('painel')->with(['message' => 'Registro de dispinibilidade realizado', 'messageLink' => 'https://t.me/share/url?url=**'.Auth::user()->name.'**&text=T%C3%B4%20on']);
     }
 
     public function output()
@@ -66,6 +66,6 @@ class HourController extends Controller
             }
         }
 
-        return redirect()->back();
+        return  redirect()->route('painel')->with(['message' => 'Registro de encerramento realizado com sucesso', 'messageLink' => 'https://t.me/share/url?url=**'.Auth::user()->name.'**&text=T%C3%B4%20off']);
     }
 }

@@ -4,7 +4,6 @@ import { computed } from "vue";
 
 
 const page = usePage()
-
 const user = computed(() => page.props.auth.user)
 
 
@@ -19,7 +18,7 @@ const user = computed(() => page.props.auth.user)
 
         <v-card-text>
             <p><strong>Função:</strong> {{user.role}}   </p>
-            <p><strong>Local:</strong> {{user.operation}} </p>
+            <p><strong>Operação:</strong> {{user.operation}} </p>
         </v-card-text>
     </v-card>
 </template>

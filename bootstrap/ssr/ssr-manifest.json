@@ -12,12 +12,12 @@
     "/build/assets/Index-0GRxu69p.css"
   ],
   "resources/js/Components/User/CardTitle.vue": [
-    "/build/assets/Acompanhamento-CeoMLxCf.js",
-    "/build/assets/Acompanhamento-BJK2fY6r.css"
+    "/build/assets/Acompanhamento-BgBeBDyH.js",
+    "/build/assets/Acompanhamento-1IWfy3bn.css"
   ],
   "resources/js/Components/User/CardTitle.vue?vue&type=style&index=0&scoped=4cdddc4f&lang.css": [
-    "/build/assets/Acompanhamento-CeoMLxCf.js",
-    "/build/assets/Acompanhamento-BJK2fY6r.css"
+    "/build/assets/Acompanhamento-BgBeBDyH.js",
+    "/build/assets/Acompanhamento-1IWfy3bn.css"
   ],
   "resources/js/Components/User/CardUser.vue": [
     "/build/assets/Painel-K8mTFb8k.js",
@@ -44,12 +44,16 @@
     "/build/assets/Painel-DZoh1IBF.css"
   ],
   "resources/js/Pages/Colaborador/Acompanhamento.vue": [
-    "/build/assets/Acompanhamento-CeoMLxCf.js",
-    "/build/assets/Acompanhamento-BJK2fY6r.css"
+    "/build/assets/Acompanhamento-BgBeBDyH.js",
+    "/build/assets/Acompanhamento-1IWfy3bn.css"
   ],
-  "resources/js/Pages/Colaborador/Acompanhamento.vue?vue&type=style&index=0&scoped=4fb05b17&lang.css": [
-    "/build/assets/Acompanhamento-CeoMLxCf.js",
-    "/build/assets/Acompanhamento-BJK2fY6r.css"
+  "resources/js/Pages/Colaborador/Acompanhamento.vue?vue&type=script&setup=true&lang.ts": [
+    "/build/assets/Acompanhamento-BgBeBDyH.js",
+    "/build/assets/Acompanhamento-1IWfy3bn.css"
+  ],
+  "resources/js/Pages/Colaborador/Acompanhamento.vue?vue&type=style&index=0&scoped=4b039259&lang.css": [
+    "/build/assets/Acompanhamento-BgBeBDyH.js",
+    "/build/assets/Acompanhamento-1IWfy3bn.css"
   ],
   "resources/js/Pages/Colaborador/Painel.vue": [
     "/build/assets/Painel-K8mTFb8k.js",

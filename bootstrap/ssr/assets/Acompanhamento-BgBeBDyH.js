@@ -1,6 +1,6 @@
-import { resolveComponent, mergeProps, withCtx, createTextVNode, toDisplayString, openBlock, createBlock, createCommentVNode, useSSRContext, unref, createVNode, Fragment, renderList } from "vue";
+import { resolveComponent, mergeProps, withCtx, createTextVNode, toDisplayString, openBlock, createBlock, createCommentVNode, useSSRContext, defineComponent, reactive, unref, createVNode, Fragment, renderList } from "vue";
 import { ssrRenderComponent, ssrInterpolate, ssrRenderList } from "vue/server-renderer";
-import { Head } from "@inertiajs/vue3";
+import { Head, router } from "@inertiajs/vue3";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
 const _sfc_main$1 = {
   __name: "CardTitle",
@@ -63,13 +63,25 @@ _sfc_main$1.setup = (props, ctx) => {
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
 const CardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-4cdddc4f"]]);
-const _sfc_main = {
+const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "Acompanhamento",
   __ssrInlineRender: true,
   props: {
-    records: Object
+    records: Object,
+    dateFilter: {
+      type: Object,
+      default: {
+        dataInicial: "",
+        dataFinal: ""
+      }
+    }
   },
   setup(__props) {
+    const props = __props;
+    const date = reactive({
+      dataInicial: props.dateFilter.dataInicial,
+      dataFinal: props.dateFilter.dataFinal
+    });
     function formatDate(dataString) {
       const [ano, mes, dia] = dataString.split("-");
       const data = new Date(ano, mes - 1, dia);
@@ -90,18 +102,33 @@ const _sfc_main = {
       const hora = horaFormatada + ":" + minutoFormatado + ":" + segundoFormatado;
       return hora;
     }
+    function cleanfilter() {
+      date.dataInicial = "";
+      date.dataFinal = "";
+      router.visit("/acompanhamento");
+    }
+    function searchList() {
+      router.visit("/acompanhamento", {
+        method: "get",
+        data: {
+          dataInicial: date.dataInicial,
+          dataFinal: date.dataFinal
+        }
+      });
+    }
     return (_ctx, _push, _parent, _attrs) => {
       const _component_painel_user = resolveComponent("painel-user");
       const _component_v_card = resolveComponent("v-card");
+      const _component_v_row = resolveComponent("v-row");
+      const _component_v_col = resolveComponent("v-col");
+      const _component_v_text_field = resolveComponent("v-text-field");
+      const _component_v_btn = resolveComponent("v-btn");
       const _component_v_card_text = resolveComponent("v-card-text");
       const _component_v_expansion_panels = resolveComponent("v-expansion-panels");
       const _component_v_expansion_panel = resolveComponent("v-expansion-panel");
       const _component_v_expansion_panel_title = resolveComponent("v-expansion-panel-title");
-      const _component_v_row = resolveComponent("v-row");
-      const _component_v_col = resolveComponent("v-col");
       const _component_v_icon = resolveComponent("v-icon");
       const _component_v_expansion_panel_text = resolveComponent("v-expansion-panel-text");
-      const _component_v_btn = resolveComponent("v-btn");
       _push(`<!--[-->`);
       _push(ssrRenderComponent(unref(Head), { title: "Acompanhamento" }, null, _parent));
       _push(ssrRenderComponent(_component_painel_user, null, {
@@ -120,6 +147,172 @@ const _sfc_main = {
               }),
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
+                  _push3(ssrRenderComponent(_component_v_row, null, {
+                    default: withCtx((_3, _push4, _parent4, _scopeId3) => {
+                      if (_push4) {
+                        _push4(ssrRenderComponent(_component_v_col, { cols: "3" }, {
+                          default: withCtx((_4, _push5, _parent5, _scopeId4) => {
+                            if (_push5) {
+                              _push5(ssrRenderComponent(_component_v_text_field, {
+                                modelValue: date.dataInicial,
+                                "onUpdate:modelValue": ($event) => date.dataInicial = $event,
+                                label: "Data Inicial",
+                                type: "date"
+                              }, null, _parent5, _scopeId4));
+                            } else {
+                              return [
+                                createVNode(_component_v_text_field, {
+                                  modelValue: date.dataInicial,
+                                  "onUpdate:modelValue": ($event) => date.dataInicial = $event,
+                                  label: "Data Inicial",
+                                  type: "date"
+                                }, null, 8, ["modelValue", "onUpdate:modelValue"])
+                              ];
+                            }
+                          }),
+                          _: 1
+                        }, _parent4, _scopeId3));
+                        _push4(ssrRenderComponent(_component_v_col, { cols: "3" }, {
+                          default: withCtx((_4, _push5, _parent5, _scopeId4) => {
+                            if (_push5) {
+                              _push5(ssrRenderComponent(_component_v_text_field, {
+                                modelValue: date.dataFinal,
+                                "onUpdate:modelValue": ($event) => date.dataFinal = $event,
+                                label: "Data Final",
+                                type: "date"
+                              }, null, _parent5, _scopeId4));
+                            } else {
+                              return [
+                                createVNode(_component_v_text_field, {
+                                  modelValue: date.dataFinal,
+                                  "onUpdate:modelValue": ($event) => date.dataFinal = $event,
+                                  label: "Data Final",
+                                  type: "date"
+                                }, null, 8, ["modelValue", "onUpdate:modelValue"])
+                              ];
+                            }
+                          }),
+                          _: 1
+                        }, _parent4, _scopeId3));
+                        _push4(ssrRenderComponent(_component_v_col, {
+                          cols: "2",
+                          class: "btn-filter"
+                        }, {
+                          default: withCtx((_4, _push5, _parent5, _scopeId4) => {
+                            if (_push5) {
+                              _push5(ssrRenderComponent(_component_v_btn, {
+                                onClick: ($event) => searchList(),
+                                class: "btn-search",
+                                disabled: date.dataInicial === null || date.dataFinal === null
+                              }, {
+                                default: withCtx((_5, _push6, _parent6, _scopeId5) => {
+                                  if (_push6) {
+                                    _push6(` Buscar`);
+                                  } else {
+                                    return [
+                                      createTextVNode(" Buscar")
+                                    ];
+                                  }
+                                }),
+                                _: 1
+                              }, _parent5, _scopeId4));
+                              _push5(ssrRenderComponent(_component_v_btn, {
+                                onClick: ($event) => cleanfilter(),
+                                disabled: date.dataInicial === null || date.dataFinal === null
+                              }, {
+                                default: withCtx((_5, _push6, _parent6, _scopeId5) => {
+                                  if (_push6) {
+                                    _push6(` Limpar Filtro`);
+                                  } else {
+                                    return [
+                                      createTextVNode(" Limpar Filtro")
+                                    ];
+                                  }
+                                }),
+                                _: 1
+                              }, _parent5, _scopeId4));
+                            } else {
+                              return [
+                                createVNode(_component_v_btn, {
+                                  onClick: ($event) => searchList(),
+                                  class: "btn-search",
+                                  disabled: date.dataInicial === null || date.dataFinal === null
+                                }, {
+                                  default: withCtx(() => [
+                                    createTextVNode(" Buscar")
+                                  ]),
+                                  _: 1
+                                }, 8, ["onClick", "disabled"]),
+                                createVNode(_component_v_btn, {
+                                  onClick: ($event) => cleanfilter(),
+                                  disabled: date.dataInicial === null || date.dataFinal === null
+                                }, {
+                                  default: withCtx(() => [
+                                    createTextVNode(" Limpar Filtro")
+                                  ]),
+                                  _: 1
+                                }, 8, ["onClick", "disabled"])
+                              ];
+                            }
+                          }),
+                          _: 1
+                        }, _parent4, _scopeId3));
+                      } else {
+                        return [
+                          createVNode(_component_v_col, { cols: "3" }, {
+                            default: withCtx(() => [
+                              createVNode(_component_v_text_field, {
+                                modelValue: date.dataInicial,
+                                "onUpdate:modelValue": ($event) => date.dataInicial = $event,
+                                label: "Data Inicial",
+                                type: "date"
+                              }, null, 8, ["modelValue", "onUpdate:modelValue"])
+                            ]),
+                            _: 1
+                          }),
+                          createVNode(_component_v_col, { cols: "3" }, {
+                            default: withCtx(() => [
+                              createVNode(_component_v_text_field, {
+                                modelValue: date.dataFinal,
+                                "onUpdate:modelValue": ($event) => date.dataFinal = $event,
+                                label: "Data Final",
+                                type: "date"
+                              }, null, 8, ["modelValue", "onUpdate:modelValue"])
+                            ]),
+                            _: 1
+                          }),
+                          createVNode(_component_v_col, {
+                            cols: "2",
+                            class: "btn-filter"
+                          }, {
+                            default: withCtx(() => [
+                              createVNode(_component_v_btn, {
+                                onClick: ($event) => searchList(),
+                                class: "btn-search",
+                                disabled: date.dataInicial === null || date.dataFinal === null
+                              }, {
+                                default: withCtx(() => [
+                                  createTextVNode(" Buscar")
+                                ]),
+                                _: 1
+                              }, 8, ["onClick", "disabled"]),
+                              createVNode(_component_v_btn, {
+                                onClick: ($event) => cleanfilter(),
+                                disabled: date.dataInicial === null || date.dataFinal === null
+                              }, {
+                                default: withCtx(() => [
+                                  createTextVNode(" Limpar Filtro")
+                                ]),
+                                _: 1
+                              }, 8, ["onClick", "disabled"])
+                            ]),
+                            _: 1
+                          })
+                        ];
+                      }
+                    }),
+                    _: 1
+                  }, _parent3, _scopeId2));
                   _push3(ssrRenderComponent(_component_v_card_text, null, {
                     default: withCtx((_3, _push4, _parent4, _scopeId3) => {
                       if (_push4) {
@@ -718,7 +911,7 @@ const _sfc_main = {
                                                           _push9(`${ssrInterpolate(count == 0 ? " " : interHours(
                                                             __props.records.hour[index][count - 1].output,
                                                             item.input
-                                                          ))} <br data-v-4fb05b17${_scopeId8}>`);
+                                                          ))} <br data-v-4b039259${_scopeId8}>`);
                                                         } else {
                                                           return [
                                                             createTextVNode(toDisplayString(count == 0 ? " " : interHours(
@@ -1754,6 +1947,60 @@ const _sfc_main = {
                   }, _parent3, _scopeId2));
                 } else {
                   return [
+                    createVNode(_component_v_row, null, {
+                      default: withCtx(() => [
+                        createVNode(_component_v_col, { cols: "3" }, {
+                          default: withCtx(() => [
+                            createVNode(_component_v_text_field, {
+                              modelValue: date.dataInicial,
+                              "onUpdate:modelValue": ($event) => date.dataInicial = $event,
+                              label: "Data Inicial",
+                              type: "date"
+                            }, null, 8, ["modelValue", "onUpdate:modelValue"])
+                          ]),
+                          _: 1
+                        }),
+                        createVNode(_component_v_col, { cols: "3" }, {
+                          default: withCtx(() => [
+                            createVNode(_component_v_text_field, {
+                              modelValue: date.dataFinal,
+                              "onUpdate:modelValue": ($event) => date.dataFinal = $event,
+                              label: "Data Final",
+                              type: "date"
+                            }, null, 8, ["modelValue", "onUpdate:modelValue"])
+                          ]),
+                          _: 1
+                        }),
+                        createVNode(_component_v_col, {
+                          cols: "2",
+                          class: "btn-filter"
+                        }, {
+                          default: withCtx(() => [
+                            createVNode(_component_v_btn, {
+                              onClick: ($event) => searchList(),
+                              class: "btn-search",
+                              disabled: date.dataInicial === null || date.dataFinal === null
+                            }, {
+                              default: withCtx(() => [
+                                createTextVNode(" Buscar")
+                              ]),
+                              _: 1
+                            }, 8, ["onClick", "disabled"]),
+                            createVNode(_component_v_btn, {
+                              onClick: ($event) => cleanfilter(),
+                              disabled: date.dataInicial === null || date.dataFinal === null
+                            }, {
+                              default: withCtx(() => [
+                                createTextVNode(" Limpar Filtro")
+                              ]),
+                              _: 1
+                            }, 8, ["onClick", "disabled"])
+                          ]),
+                          _: 1
+                        })
+                      ]),
+                      _: 1
+                    }),
                     createVNode(_component_v_card_text, null, {
                       default: withCtx(() => [
                         createVNode(_component_v_expansion_panels, { variant: "accordion" }, {
@@ -2031,6 +2278,60 @@ const _sfc_main = {
                   createTextVNode(" Meus registros ")
                 ]),
                 default: withCtx(() => [
+                  createVNode(_component_v_row, null, {
+                    default: withCtx(() => [
+                      createVNode(_component_v_col, { cols: "3" }, {
+                        default: withCtx(() => [
+                          createVNode(_component_v_text_field, {
+                            modelValue: date.dataInicial,
+                            "onUpdate:modelValue": ($event) => date.dataInicial = $event,
+                            label: "Data Inicial",
+                            type: "date"
+                          }, null, 8, ["modelValue", "onUpdate:modelValue"])
+                        ]),
+                        _: 1
+                      }),
+                      createVNode(_component_v_col, { cols: "3" }, {
+                        default: withCtx(() => [
+                          createVNode(_component_v_text_field, {
+                            modelValue: date.dataFinal,
+                            "onUpdate:modelValue": ($event) => date.dataFinal = $event,
+                            label: "Data Final",
+                            type: "date"
+                          }, null, 8, ["modelValue", "onUpdate:modelValue"])
+                        ]),
+                        _: 1
+                      }),
+                      createVNode(_component_v_col, {
+                        cols: "2",
+                        class: "btn-filter"
+                      }, {
+                        default: withCtx(() => [
+                          createVNode(_component_v_btn, {
+                            onClick: ($event) => searchList(),
+                            class: "btn-search",
+                            disabled: date.dataInicial === null || date.dataFinal === null
+                          }, {
+                            default: withCtx(() => [
+                              createTextVNode(" Buscar")
+                            ]),
+                            _: 1
+                          }, 8, ["onClick", "disabled"]),
+                          createVNode(_component_v_btn, {
+                            onClick: ($event) => cleanfilter(),
+                            disabled: date.dataInicial === null || date.dataFinal === null
+                          }, {
+                            default: withCtx(() => [
+                              createTextVNode(" Limpar Filtro")
+                            ]),
+                            _: 1
+                          }, 8, ["onClick", "disabled"])
+                        ]),
+                        _: 1
+                      })
+                    ]),
+                    _: 1
+                  }),
                   createVNode(_component_v_card_text, null, {
                     default: withCtx(() => [
                       createVNode(_component_v_expansion_panels, { variant: "accordion" }, {
@@ -2306,14 +2607,14 @@ const _sfc_main = {
       _push(`<!--]-->`);
     };
   }
-};
+});
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Colaborador/Acompanhamento.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const Acompanhamento = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-4fb05b17"]]);
+const Acompanhamento = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-4b039259"]]);
 export {
   Acompanhamento as default
 };

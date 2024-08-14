@@ -12,14 +12,20 @@ use PharIo\Manifest\Author;
 
 class AcompanhamentoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $dataAtual = Carbon::now();
-        $primeiroDiaMes = $dataAtual->firstOfMonth()->format('Y-m-d');
-        $ultimoDiaMes = $dataAtual->endOfMonth()->addDay(1)->format('Y-m-d');
+        if ($request->dataInicial == null || $request->dataFinal == null) {
+            $dataAtual = Carbon::now();
+            $dataInicial = $dataAtual->firstOfMonth()->format('Y-m-d');
+            $dataFinal = $dataAtual->endOfMonth()->addDay(1)->format('Y-m-d');
+        } elseif ($request->dataInicial !== null && $request->dataFinal !== null) {
+            $dataInicial = Carbon::createFromFormat('Y-m-d', $request->dataInicial)->format('Y-m-d');
+            $dataFinal = Carbon::createFromFormat('Y-m-d', $request->dataFinal)->addDay(1)->format('Y-m-d');
+        }
+
        
 
-        $records = Auth::user()->records->whereBetween('date',[$primeiroDiaMes, $ultimoDiaMes])->groupBy('date');
+        $records = Auth::user()->records->whereBetween('date',[$dataInicial, $dataFinal])->groupBy('date');
 
         $sums = [];
         $nullRecords = [];
@@ -67,6 +73,10 @@ class AcompanhamentoController extends Controller
                 'hour' => $records,
                 'totalHour' => $sums,
                 'errors' => $nullRecords
+            ],
+            'dateFilter' => [
+                'dataInicial' => $request->dataInicial,
+                'dataFinal' => $request->dataFinal,
             ]
         ]);
 

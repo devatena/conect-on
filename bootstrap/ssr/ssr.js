@@ -491,7 +491,7 @@ createServer(
     page,
     render: renderToString,
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Colaborador/Acompanhamento.vue": () => import("./assets/Acompanhamento-BgBeBDyH.js"), "./Pages/Colaborador/Painel.vue": () => import("./assets/Painel-K8mTFb8k.js"), "./Pages/Gestao/Acompanhamento/Index.vue": () => import("./assets/Index-D2Auxb4d.js"), "./Pages/Gestao/Index.vue": () => import("./assets/Index-BHvFY5mh.js"), "./Pages/Gestao/Prestadores/Index.vue": () => import("./assets/Index-CTRndDpx.js"), "./Pages/Index.vue": () => import("./assets/Index-DLFFndhs.js") })),
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Colaborador/Acompanhamento.vue": () => import("./assets/Acompanhamento-D-40Dvg-.js"), "./Pages/Colaborador/Painel.vue": () => import("./assets/Painel-Bnh-2Ni8.js"), "./Pages/Gestao/Acompanhamento/Index.vue": () => import("./assets/Index-DxJVCcRC.js"), "./Pages/Gestao/Index.vue": () => import("./assets/Index-C12P34Mt.js"), "./Pages/Gestao/Prestadores/Index.vue": () => import("./assets/Index-BbMDAJ6_.js"), "./Pages/Index.vue": () => import("./assets/Index-DLFFndhs.js") })),
     setup({ App, props, plugin }) {
       return createSSRApp({ render: () => h$1(App, props) }).use(plugin).use(P, {
         ...page.props.ziggy,

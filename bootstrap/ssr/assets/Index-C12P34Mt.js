@@ -123,7 +123,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Gestao/MenuGestao.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const MenuGestao = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-2a4b2e42"]]);
+const MenuGestao = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-436b8720"]]);
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "Index",
   __ssrInlineRender: true,

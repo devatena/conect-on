@@ -26,7 +26,7 @@ const _sfc_main$3 = {
             _push2(ssrRenderComponent(_component_v_card_text, null, {
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
-                  _push3(`<p data-v-b79d73cc${_scopeId2}><strong data-v-b79d73cc${_scopeId2}>Função:</strong> ${ssrInterpolate(user.value.role)}</p><p data-v-b79d73cc${_scopeId2}><strong data-v-b79d73cc${_scopeId2}>Operação:</strong> ${ssrInterpolate(user.value.operation)}</p>`);
+                  _push3(`<p data-v-0e89ee3c${_scopeId2}><strong data-v-0e89ee3c${_scopeId2}>Função:</strong> ${ssrInterpolate(user.value.role)}</p><p data-v-0e89ee3c${_scopeId2}><strong data-v-0e89ee3c${_scopeId2}>Operação:</strong> ${ssrInterpolate(user.value.operation)}</p>`);
                 } else {
                   return [
                     createVNode("p", null, [
@@ -71,7 +71,7 @@ _sfc_main$3.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/User/CardUser.vue");
   return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const CardUSer = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-b79d73cc"]]);
+const CardUSer = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-0e89ee3c"]]);
 const _sfc_main$2 = {
   __name: "EntradaSaida",
   __ssrInlineRender: true,
@@ -97,7 +97,9 @@ const _sfc_main$2 = {
     function output() {
       router.post("/record/output", null, {
         onBefore: () => disabled.value = true,
-        onFinish: () => disabled.value = false
+        onFinish: () => {
+          disabled.value = false;
+        }
       });
     }
     setInterval(updateClock, 1e3);
@@ -128,7 +130,7 @@ const _sfc_main$2 = {
                     size: "50",
                     color: "purple"
                   }, null, _parent3, _scopeId2));
-                  _push3(`<p class="time mb-5" data-v-5a4a387c${_scopeId2}>${ssrInterpolate(time.value)}</p><div class="btn-register" data-v-5a4a387c${_scopeId2}>`);
+                  _push3(`<p class="time mb-5" data-v-d9d9a157${_scopeId2}>${ssrInterpolate(time.value)}</p><div class="btn-register" data-v-d9d9a157${_scopeId2}>`);
                   _push3(ssrRenderComponent(_component_v_btn, {
                     style: { "background": "blueviolet" },
                     onClick: ($event) => input(),
@@ -248,7 +250,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/User/EntradaSaida.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const EntradaSaida = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-5a4a387c"]]);
+const EntradaSaida = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-d9d9a157"]]);
 const _sfc_main$1 = {
   __name: "JornadaResumo",
   __ssrInlineRender: true,

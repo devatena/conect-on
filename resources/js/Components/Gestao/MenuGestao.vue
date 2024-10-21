@@ -26,7 +26,7 @@ const menu = reactive([
         name: 'Acompanhamento',
         icon: 'mdi-table',
         route: 'acompanhamento'
-    }
+    },
 ])
 
 </script>

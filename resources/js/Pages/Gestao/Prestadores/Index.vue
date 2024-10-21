@@ -1,6 +1,6 @@
 <template>
     <painel-gestao :backTo="true" :page-name="pageTitle">
-        <v-table height="500px" fixed-header>
+        <v-table fixed-header>
             <thead class="header" style="background-color: red">
                 <tr>
                     <th
@@ -33,6 +33,15 @@
                 </tr>
             </tbody>
         </v-table>
+        <div class="novo-prestador">
+            <v-btn size="small" class="new" @click="openModal()">
+                Novo
+                <v-icon icon="mdi-plus"></v-icon>
+            </v-btn>
+        </div>
+        <modal-dialog :open="open" @update:open="open = $event">
+            <form-user  @close-dialog="closeModal"> </form-user>
+        </modal-dialog>
     </painel-gestao>
 </template>
 
@@ -40,6 +49,8 @@
 import { router } from "@inertiajs/vue3";
 import { reactive } from "vue";
 import { ref } from "vue";
+import ModalDialog from "@/Components/Modal/ModalDialog.vue";
+import FormUser from "@/Components/User/FormUser.vue";
 
 const pageTitle = ref(" | Prestadores de Serviço");
 
@@ -48,11 +59,18 @@ defineProps({
 });
 
 const columns = reactive(["Nome", "Ações"]);
+const open = ref(false);
 
 function deleteUser(id: any) {
-  router.delete('prestadores/'+id)
-  // alert( 'funcionalidade em teste')
+    router.delete("prestadores/" + id);
+    // alert( 'funcionalidade em teste')
 }
+function openModal() {
+    open.value = true;
+}
+const closeModal = () => {
+  open.value = false;
+};
 </script>
 
 <style scoped>
@@ -90,5 +108,16 @@ th {
 .search {
     background-color: blueviolet;
     color: white;
+}
+
+.new {
+    background-color: rgb(43, 226, 125);
+    color: white;
+}
+
+.novo-prestador {
+    text-align: right;
+    padding: 10px;
+    border-top: 1px solid rgb(192, 192, 192);
 }
 </style>

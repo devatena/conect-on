@@ -28,7 +28,9 @@ function input() {
 function output() {
     router.post("/record/output", null, {
         onBefore: () => (disabled.value = true),
-        onFinish: () => (disabled.value = false),
+        onFinish: () => {
+            disabled.value = false
+        },
     });
 }
 
